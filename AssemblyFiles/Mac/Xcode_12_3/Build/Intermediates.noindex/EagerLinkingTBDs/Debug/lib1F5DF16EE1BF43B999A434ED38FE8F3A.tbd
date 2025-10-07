@@ -1,0 +1,42 @@
+{
+  "main_library": {
+    "exported_symbols": [
+      {
+        "data": {
+          "global": [
+            "_g_x1F5DF16EE1BF43B999A434ED38FE8F3AFactoryVTbl",
+            "_g_x1F5DF16EE1BF43B999A434ED38FE8F3AFactory",
+            "_g_x277FC00C35624096AFCFC125B94EEC90VTbl"
+          ]
+        },
+        "text": {
+          "global": [
+            "_GetIEcoComponentFactoryPtr",
+            "_createCEcoLab1",
+            "_deleteCEcoLab1",
+            "_initCEcoLab1"
+          ]
+        }
+      }
+    ],
+    "flags": [
+      {
+        "attributes": [
+          "not_app_extension_safe"
+        ]
+      }
+    ],
+    "install_names": [
+      {
+        "name": "/usr/local/lib/lib1F5DF16EE1BF43B999A434ED38FE8F3A.dylib"
+      }
+    ],
+    "target_info": [
+      {
+        "min_deployment": "11",
+        "target": "arm64-macos"
+      }
+    ]
+  },
+  "tapi_tbd_version": 5
+}
