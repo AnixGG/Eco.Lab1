@@ -10,9 +10,6 @@
 		01C7120227F20DF800AE9906 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C7120127F20DF800AE9906 /* Cocoa.framework */; };
 		01C7120427F20E0F00AE9906 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C7120327F20E0F00AE9906 /* Foundation.framework */; };
 		01C7120F27F20FD800AE9906 /* EcoLab1.c in Sources */ = {isa = PBXBuildFile; fileRef = 01C7120D27F20FD800AE9906 /* EcoLab1.c */; };
-		01C7122127F211C900AE9906 /* lib00000000000000000000000046534D31.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C7122027F211C900AE9906 /* lib00000000000000000000000046534D31.a */; };
-		01C7122327F211DC00AE9906 /* lib00000000000000000000000042757331.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C7122227F211DC00AE9906 /* lib00000000000000000000000042757331.a */; };
-		01C7122527F211EF00AE9906 /* lib0000000000000000000000004D656D31.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 01C7122427F211EF00AE9906 /* lib0000000000000000000000004D656D31.a */; };
 		4E250C872E93B0EF00F6E4CE /* lib00000000000000000000000046534D31.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E25069E2E933C7200F6E4CE /* lib00000000000000000000000046534D31.a */; };
 		4E250C882E93B14A00F6E4CE /* lib00000000000000000000000042757331.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2507172E933C7200F6E4CE /* lib00000000000000000000000042757331.a */; };
 		4E250C892E93B18600F6E4CE /* lib0000000000000000000000004D656D31.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2507C32E933C7200F6E4CE /* lib0000000000000000000000004D656D31.a */; };
@@ -196,22 +193,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		01B2B6222B7C1541008E228C /* lib53884AFC93C448ECAA929C8D3A562281.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib53884AFC93C448ECAA929C8D3A562281.a; path = "../../../../Eco.Framework/Eco.List1/BuildFiles/Mac/arm64 x86_64/StaticRelease/lib53884AFC93C448ECAA929C8D3A562281.a"; sourceTree = "<group>"; };
-		01B2B6242B7C1565008E228C /* lib84CC0A7DBABD44EEBE749C9A8312D37E.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib84CC0A7DBABD44EEBE749C9A8312D37E.a; path = "../../../../Eco.Framework/Eco.String1/BuildFiles/Mac/arm64 x86_64/StaticRelease/lib84CC0A7DBABD44EEBE749C9A8312D37E.a"; sourceTree = "<group>"; };
-		01B2B6262B7C15A0008E228C /* lib82F73722057E47F3A2931ED27087694D.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib82F73722057E47F3A2931ED27087694D.a; path = "../../../../Eco.Framework/Eco.Tree1/BuildFiles/Mac/arm64 x86_64/StaticRelease/lib82F73722057E47F3A2931ED27087694D.a"; sourceTree = "<group>"; };
-		01B2B6282B7C16F6008E228C /* lib4E7C20FEFAF341069B5C42497B462BBE.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib4E7C20FEFAF341069B5C42497B462BBE.a; path = "../../../../Eco.Framework/Eco.Visitor1/BuildFiles/Mac/arm64 x86_64/StaticRelease/lib4E7C20FEFAF341069B5C42497B462BBE.a"; sourceTree = "<group>"; };
 		01C711F527F20D7900AE9906 /* Eco.Lab1UnitTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Eco.Lab1UnitTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C7120127F20DF800AE9906 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		01C7120327F20E0F00AE9906 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		01C7120D27F20FD800AE9906 /* EcoLab1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = EcoLab1.c; path = ../../../UnitTestFiles/SourceFiles/EcoLab1.c; sourceTree = "<group>"; };
-		01C7121927F2117100AE9906 /* BuildFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; name = BuildFiles; path = ../../../../Eco.System1/BuildFiles; sourceTree = "<group>"; };
-		01C7121D27F2119C00AE9906 /* lib00000000000000000000000000000100.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib00000000000000000000000000000100.a; path = "../../../../Eco.System1/BuildFiles/Mac/arm64 x86_64/Debug/lib00000000000000000000000000000100.a"; sourceTree = "<group>"; };
-		01C7122027F211C900AE9906 /* lib00000000000000000000000046534D31.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib00000000000000000000000046534D31.a; path = "../../../../Eco.FileSystemManagement1/BuildFiles/Mac/arm64 x86_64/Debug/lib00000000000000000000000046534D31.a"; sourceTree = "<group>"; };
-		01C7122227F211DC00AE9906 /* lib00000000000000000000000042757331.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib00000000000000000000000042757331.a; path = "../../../../Eco.InterfaceBus1/BuildFiles/Mac/arm64 x86_64/Debug/lib00000000000000000000000042757331.a"; sourceTree = "<group>"; };
-		01C7122427F211EF00AE9906 /* lib0000000000000000000000004D656D31.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib0000000000000000000000004D656D31.a; path = "../../../../Eco.MemoryManager1/BuildFiles/Mac/arm64 x86_64/Debug/lib0000000000000000000000004D656D31.a"; sourceTree = "<group>"; };
-		01C7122827F212F900AE9906 /* lib1F5DF16EE1BF43B999A434ED38FE8F3A.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib1F5DF16EE1BF43B999A434ED38FE8F3A.a; path = "../../../BuildFiles/Mac/arm64 x86_64/Debug/lib1F5DF16EE1BF43B999A434ED38FE8F3A.a"; sourceTree = "<group>"; };
 		4E2501CD2E92B4C400F6E4CE /* lib1F5DF16EE1BF43B999A434ED38FE8F3A.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib1F5DF16EE1BF43B999A434ED38FE8F3A.a; path = ../../../BuildFiles/Mac/arm64/Debug/lib1F5DF16EE1BF43B999A434ED38FE8F3A.a; sourceTree = "<group>"; };
-		4E2501D42E933C1100F6E4CE /* lib1F5DF16EE1BF43B999A434ED38FE8F3A.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = lib1F5DF16EE1BF43B999A434ED38FE8F3A.dylib; path = ../../../BuildFiles/Mac/arm64/Debug/lib1F5DF16EE1BF43B999A434ED38FE8F3A.dylib; sourceTree = "<group>"; };
 		4E2501D62E933C4A00F6E4CE /* lib00000000000000000000000053595333.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = lib00000000000000000000000053595333.a; path = ../../../../../../Eco.Framework_20250429/Eco.System1/BuildFiles/Mac/arm64/DynamicRelease/lib00000000000000000000000053595333.a; sourceTree = "<group>"; };
 		4E2501D82E933C7200F6E4CE /* build.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
 		4E2501D92E933C7200F6E4CE /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
@@ -2159,9 +2145,6 @@
 				4E250C872E93B0EF00F6E4CE /* lib00000000000000000000000046534D31.a in Frameworks */,
 				4E250C892E93B18600F6E4CE /* lib0000000000000000000000004D656D31.a in Frameworks */,
 				4E250C882E93B14A00F6E4CE /* lib00000000000000000000000042757331.a in Frameworks */,
-				01C7122527F211EF00AE9906 /* lib0000000000000000000000004D656D31.a in Frameworks */,
-				01C7122327F211DC00AE9906 /* lib00000000000000000000000042757331.a in Frameworks */,
-				01C7122127F211C900AE9906 /* lib00000000000000000000000046534D31.a in Frameworks */,
 				01C7120427F20E0F00AE9906 /* Foundation.framework in Frameworks */,
 				01C7120227F20DF800AE9906 /* Cocoa.framework in Frameworks */,
 			);
@@ -2194,18 +2177,7 @@
 			children = (
 				4E250C1D2E933C7200F6E4CE /* Eco */,
 				4E2501D62E933C4A00F6E4CE /* lib00000000000000000000000053595333.a */,
-				4E2501D42E933C1100F6E4CE /* lib1F5DF16EE1BF43B999A434ED38FE8F3A.dylib */,
 				4E2501CD2E92B4C400F6E4CE /* lib1F5DF16EE1BF43B999A434ED38FE8F3A.a */,
-				01B2B6282B7C16F6008E228C /* lib4E7C20FEFAF341069B5C42497B462BBE.a */,
-				01B2B6262B7C15A0008E228C /* lib82F73722057E47F3A2931ED27087694D.a */,
-				01B2B6242B7C1565008E228C /* lib84CC0A7DBABD44EEBE749C9A8312D37E.a */,
-				01B2B6222B7C1541008E228C /* lib53884AFC93C448ECAA929C8D3A562281.a */,
-				01C7122827F212F900AE9906 /* lib1F5DF16EE1BF43B999A434ED38FE8F3A.a */,
-				01C7122427F211EF00AE9906 /* lib0000000000000000000000004D656D31.a */,
-				01C7122227F211DC00AE9906 /* lib00000000000000000000000042757331.a */,
-				01C7122027F211C900AE9906 /* lib00000000000000000000000046534D31.a */,
-				01C7121D27F2119C00AE9906 /* lib00000000000000000000000000000100.a */,
-				01C7121927F2117100AE9906 /* BuildFiles */,
 				01C7120327F20E0F00AE9906 /* Foundation.framework */,
 				01C7120127F20DF800AE9906 /* Cocoa.framework */,
 			);
