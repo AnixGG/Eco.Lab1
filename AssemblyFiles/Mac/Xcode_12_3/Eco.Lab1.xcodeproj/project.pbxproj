@@ -15,10 +15,30 @@
 		01138AE027F1BE2C00734060 /* IEcoLab1.h in Headers */ = {isa = PBXBuildFile; fileRef = 01138ADD27F1BE2C00734060 /* IEcoLab1.h */; };
 		01138AE127F1BE2C00734060 /* IdEcoLab1.h in Headers */ = {isa = PBXBuildFile; fileRef = 01138ADE27F1BE2C00734060 /* IdEcoLab1.h */; };
 		01138AE227F1BE2C00734060 /* IdEcoLab1.h in Headers */ = {isa = PBXBuildFile; fileRef = 01138ADE27F1BE2C00734060 /* IdEcoLab1.h */; };
-		01138AE727F1BE4900734060 /* CEcoLab1.c in Sources */ = {isa = PBXBuildFile; fileRef = 01138AE527F1BE4900734060 /* CEcoLab1.c */; };
-		01138AE827F1BE4900734060 /* CEcoLab1.c in Sources */ = {isa = PBXBuildFile; fileRef = 01138AE527F1BE4900734060 /* CEcoLab1.c */; };
-		01138AE927F1BE4900734060 /* CEcoLab1Factory.c in Sources */ = {isa = PBXBuildFile; fileRef = 01138AE627F1BE4900734060 /* CEcoLab1Factory.c */; };
-		01138AEA27F1BE4900734060 /* CEcoLab1Factory.c in Sources */ = {isa = PBXBuildFile; fileRef = 01138AE627F1BE4900734060 /* CEcoLab1Factory.c */; };
+		4E553C242EAE7CA300CA97D8 /* IdEcoCalculatorC.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C1D2EAE7CA300CA97D8 /* IdEcoCalculatorC.h */; };
+		4E553C262EAE7CA300CA97D8 /* IEcoCalculatorY.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C222EAE7CA300CA97D8 /* IEcoCalculatorY.h */; };
+		4E553C272EAE7CA300CA97D8 /* IdEcoCalculatorD.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C1E2EAE7CA300CA97D8 /* IdEcoCalculatorD.h */; };
+		4E553C282EAE7CA300CA97D8 /* IdEcoCalculatorA.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C1B2EAE7CA300CA97D8 /* IdEcoCalculatorA.h */; };
+		4E553C292EAE7CA300CA97D8 /* IEcoCalculatorX.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C212EAE7CA300CA97D8 /* IEcoCalculatorX.h */; };
+		4E553C2A2EAE7CA300CA97D8 /* IdEcoCalculatorB.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C1C2EAE7CA300CA97D8 /* IdEcoCalculatorB.h */; };
+		4E553C2B2EAE7CA300CA97D8 /* IdEcoCalculatorE.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C1F2EAE7CA300CA97D8 /* IdEcoCalculatorE.h */; };
+		4E553C2D2EAE7CA300CA97D8 /* IdEcoCalculatorC.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C1D2EAE7CA300CA97D8 /* IdEcoCalculatorC.h */; };
+		4E553C2F2EAE7CA300CA97D8 /* IEcoCalculatorY.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C222EAE7CA300CA97D8 /* IEcoCalculatorY.h */; };
+		4E553C302EAE7CA300CA97D8 /* IdEcoCalculatorD.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C1E2EAE7CA300CA97D8 /* IdEcoCalculatorD.h */; };
+		4E553C312EAE7CA300CA97D8 /* IdEcoCalculatorA.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C1B2EAE7CA300CA97D8 /* IdEcoCalculatorA.h */; };
+		4E553C322EAE7CA300CA97D8 /* IEcoCalculatorX.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C212EAE7CA300CA97D8 /* IEcoCalculatorX.h */; };
+		4E553C332EAE7CA300CA97D8 /* IdEcoCalculatorB.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C1C2EAE7CA300CA97D8 /* IdEcoCalculatorB.h */; };
+		4E553C342EAE7CA300CA97D8 /* IdEcoCalculatorE.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C1F2EAE7CA300CA97D8 /* IdEcoCalculatorE.h */; };
+		4E8712BD2EB30D7A00268B12 /* CEcoLab1Factory.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E8712BC2EB30D7A00268B12 /* CEcoLab1Factory.c */; };
+		4E8712BE2EB30D7A00268B12 /* CEcoLab1.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E8712BB2EB30D7A00268B12 /* CEcoLab1.c */; };
+		4E8712BF2EB30D7A00268B12 /* CEcoLab1Factory.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E8712BC2EB30D7A00268B12 /* CEcoLab1Factory.c */; };
+		4E8712C02EB30D7A00268B12 /* CEcoLab1.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E8712BB2EB30D7A00268B12 /* CEcoLab1.c */; };
+		4E8712F52EB3E71D00268B12 /* AE202E543CE54550899603BD70C62565.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8712F32EB3E71D00268B12 /* AE202E543CE54550899603BD70C62565.so */; };
+		4E8712F62EB3E71D00268B12 /* 4828F6552E4540E78121EBD220DC360E.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8712F42EB3E71D00268B12 /* 4828F6552E4540E78121EBD220DC360E.so */; };
+		4E8713782EB416B700268B12 /* 3A8E44677E82475CB4A3719ED8397E61.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8713742EB416B700268B12 /* 3A8E44677E82475CB4A3719ED8397E61.so */; };
+		4E8713792EB416B700268B12 /* AE202E543CE54550899603BD70C62565.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8713752EB416B700268B12 /* AE202E543CE54550899603BD70C62565.so */; };
+		4E87137A2EB416B700268B12 /* 872FEF1DE3314B87AD44D1E7C232C2F0.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8713762EB416B700268B12 /* 872FEF1DE3314B87AD44D1E7C232C2F0.so */; };
+		4E87137B2EB416B700268B12 /* 4828F6552E4540E78121EBD220DC360E.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8713772EB416B700268B12 /* 4828F6552E4540E78121EBD220DC360E.so */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +48,21 @@
 		01138AD627F1BE1A00734060 /* CEcoLab1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEcoLab1.h; path = ../../../HeaderFiles/CEcoLab1.h; sourceTree = "<group>"; };
 		01138ADD27F1BE2C00734060 /* IEcoLab1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IEcoLab1.h; path = ../../../SharedFiles/IEcoLab1.h; sourceTree = "<group>"; };
 		01138ADE27F1BE2C00734060 /* IdEcoLab1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IdEcoLab1.h; path = ../../../SharedFiles/IdEcoLab1.h; sourceTree = "<group>"; };
-		01138AE527F1BE4900734060 /* CEcoLab1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = CEcoLab1.c; path = ../../../SourceFiles/CEcoLab1.c; sourceTree = "<group>"; };
-		01138AE627F1BE4900734060 /* CEcoLab1Factory.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = CEcoLab1Factory.c; path = ../../../SourceFiles/CEcoLab1Factory.c; sourceTree = "<group>"; };
+		4E553C1B2EAE7CA300CA97D8 /* IdEcoCalculatorA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IdEcoCalculatorA.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoCalculatorA.h"; sourceTree = "<absolute>"; };
+		4E553C1C2EAE7CA300CA97D8 /* IdEcoCalculatorB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IdEcoCalculatorB.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoCalculatorB.h"; sourceTree = "<absolute>"; };
+		4E553C1D2EAE7CA300CA97D8 /* IdEcoCalculatorC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IdEcoCalculatorC.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoCalculatorC.h"; sourceTree = "<absolute>"; };
+		4E553C1E2EAE7CA300CA97D8 /* IdEcoCalculatorD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IdEcoCalculatorD.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoCalculatorD.h"; sourceTree = "<absolute>"; };
+		4E553C1F2EAE7CA300CA97D8 /* IdEcoCalculatorE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IdEcoCalculatorE.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoCalculatorE.h"; sourceTree = "<absolute>"; };
+		4E553C212EAE7CA300CA97D8 /* IEcoCalculatorX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IEcoCalculatorX.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IEcoCalculatorX.h"; sourceTree = "<absolute>"; };
+		4E553C222EAE7CA300CA97D8 /* IEcoCalculatorY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IEcoCalculatorY.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IEcoCalculatorY.h"; sourceTree = "<absolute>"; };
+		4E8712BB2EB30D7A00268B12 /* CEcoLab1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = CEcoLab1.c; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SourceFiles/CEcoLab1.c"; sourceTree = "<absolute>"; };
+		4E8712BC2EB30D7A00268B12 /* CEcoLab1Factory.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = CEcoLab1Factory.c; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SourceFiles/CEcoLab1Factory.c"; sourceTree = "<absolute>"; };
+		4E8712F32EB3E71D00268B12 /* AE202E543CE54550899603BD70C62565.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = AE202E543CE54550899603BD70C62565.so; path = ../../../BuildFiles/Mac/arm64/Debug/AE202E543CE54550899603BD70C62565.so; sourceTree = "<group>"; };
+		4E8712F42EB3E71D00268B12 /* 4828F6552E4540E78121EBD220DC360E.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = 4828F6552E4540E78121EBD220DC360E.so; path = ../../../BuildFiles/Mac/arm64/Debug/4828F6552E4540E78121EBD220DC360E.so; sourceTree = "<group>"; };
+		4E8713742EB416B700268B12 /* 3A8E44677E82475CB4A3719ED8397E61.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = 3A8E44677E82475CB4A3719ED8397E61.so; path = ../../../BuildFiles/3A8E44677E82475CB4A3719ED8397E61.so; sourceTree = "<group>"; };
+		4E8713752EB416B700268B12 /* AE202E543CE54550899603BD70C62565.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = AE202E543CE54550899603BD70C62565.so; path = ../../../BuildFiles/AE202E543CE54550899603BD70C62565.so; sourceTree = "<group>"; };
+		4E8713762EB416B700268B12 /* 872FEF1DE3314B87AD44D1E7C232C2F0.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = 872FEF1DE3314B87AD44D1E7C232C2F0.so; path = ../../../BuildFiles/872FEF1DE3314B87AD44D1E7C232C2F0.so; sourceTree = "<group>"; };
+		4E8713772EB416B700268B12 /* 4828F6552E4540E78121EBD220DC360E.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = 4828F6552E4540E78121EBD220DC360E.so; path = ../../../BuildFiles/4828F6552E4540E78121EBD220DC360E.so; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E8712F52EB3E71D00268B12 /* AE202E543CE54550899603BD70C62565.so in Frameworks */,
+				4E8712F62EB3E71D00268B12 /* 4828F6552E4540E78121EBD220DC360E.so in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +79,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E8713782EB416B700268B12 /* 3A8E44677E82475CB4A3719ED8397E61.so in Frameworks */,
+				4E8713792EB416B700268B12 /* AE202E543CE54550899603BD70C62565.so in Frameworks */,
+				4E87137A2EB416B700268B12 /* 872FEF1DE3314B87AD44D1E7C232C2F0.so in Frameworks */,
+				4E87137B2EB416B700268B12 /* 4828F6552E4540E78121EBD220DC360E.so in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,8 +112,8 @@
 		01138AD227F1BDE700734060 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				01138AE527F1BE4900734060 /* CEcoLab1.c */,
-				01138AE627F1BE4900734060 /* CEcoLab1Factory.c */,
+				4E8712BB2EB30D7A00268B12 /* CEcoLab1.c */,
+				4E8712BC2EB30D7A00268B12 /* CEcoLab1Factory.c */,
 			);
 			name = "Source Files";
 			sourceTree = "<group>";
@@ -82,6 +121,13 @@
 		01138AD327F1BDF100734060 /* Shared Files */ = {
 			isa = PBXGroup;
 			children = (
+				4E553C1B2EAE7CA300CA97D8 /* IdEcoCalculatorA.h */,
+				4E553C1C2EAE7CA300CA97D8 /* IdEcoCalculatorB.h */,
+				4E553C1D2EAE7CA300CA97D8 /* IdEcoCalculatorC.h */,
+				4E553C1E2EAE7CA300CA97D8 /* IdEcoCalculatorD.h */,
+				4E553C1F2EAE7CA300CA97D8 /* IdEcoCalculatorE.h */,
+				4E553C212EAE7CA300CA97D8 /* IEcoCalculatorX.h */,
+				4E553C222EAE7CA300CA97D8 /* IEcoCalculatorY.h */,
 				01138ADE27F1BE2C00734060 /* IdEcoLab1.h */,
 				01138ADD27F1BE2C00734060 /* IEcoLab1.h */,
 			);
@@ -100,6 +146,12 @@
 		4E0E90BA2E91A71D0007C502 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4E8713742EB416B700268B12 /* 3A8E44677E82475CB4A3719ED8397E61.so */,
+				4E8713762EB416B700268B12 /* 872FEF1DE3314B87AD44D1E7C232C2F0.so */,
+				4E8713772EB416B700268B12 /* 4828F6552E4540E78121EBD220DC360E.so */,
+				4E8713752EB416B700268B12 /* AE202E543CE54550899603BD70C62565.so */,
+				4E8712F42EB3E71D00268B12 /* 4828F6552E4540E78121EBD220DC360E.so */,
+				4E8712F32EB3E71D00268B12 /* AE202E543CE54550899603BD70C62565.so */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,6 +166,13 @@
 				01138AE127F1BE2C00734060 /* IdEcoLab1.h in Headers */,
 				01138AD727F1BE1A00734060 /* CEcoLab1Factory.h in Headers */,
 				01138ADF27F1BE2C00734060 /* IEcoLab1.h in Headers */,
+				4E553C2D2EAE7CA300CA97D8 /* IdEcoCalculatorC.h in Headers */,
+				4E553C2F2EAE7CA300CA97D8 /* IEcoCalculatorY.h in Headers */,
+				4E553C302EAE7CA300CA97D8 /* IdEcoCalculatorD.h in Headers */,
+				4E553C312EAE7CA300CA97D8 /* IdEcoCalculatorA.h in Headers */,
+				4E553C322EAE7CA300CA97D8 /* IEcoCalculatorX.h in Headers */,
+				4E553C332EAE7CA300CA97D8 /* IdEcoCalculatorB.h in Headers */,
+				4E553C342EAE7CA300CA97D8 /* IdEcoCalculatorE.h in Headers */,
 				01138AD927F1BE1A00734060 /* CEcoLab1.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +184,13 @@
 				01138AE227F1BE2C00734060 /* IdEcoLab1.h in Headers */,
 				01138AD827F1BE1A00734060 /* CEcoLab1Factory.h in Headers */,
 				01138AE027F1BE2C00734060 /* IEcoLab1.h in Headers */,
+				4E553C242EAE7CA300CA97D8 /* IdEcoCalculatorC.h in Headers */,
+				4E553C262EAE7CA300CA97D8 /* IEcoCalculatorY.h in Headers */,
+				4E553C272EAE7CA300CA97D8 /* IdEcoCalculatorD.h in Headers */,
+				4E553C282EAE7CA300CA97D8 /* IdEcoCalculatorA.h in Headers */,
+				4E553C292EAE7CA300CA97D8 /* IEcoCalculatorX.h in Headers */,
+				4E553C2A2EAE7CA300CA97D8 /* IdEcoCalculatorB.h in Headers */,
+				4E553C2B2EAE7CA300CA97D8 /* IdEcoCalculatorE.h in Headers */,
 				01138ADA27F1BE1A00734060 /* CEcoLab1.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,10 +242,12 @@
 				TargetAttributes = {
 					01138ABF27F1BDA600734060 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1600;
 						ProvisioningStyle = Automatic;
 					};
 					01138ACB27F1BDD300734060 = {
 						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1600;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -208,8 +276,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01138AE727F1BE4900734060 /* CEcoLab1.c in Sources */,
-				01138AE927F1BE4900734060 /* CEcoLab1Factory.c in Sources */,
+				4E8712BD2EB30D7A00268B12 /* CEcoLab1Factory.c in Sources */,
+				4E8712BE2EB30D7A00268B12 /* CEcoLab1.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,8 +285,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01138AE827F1BE4900734060 /* CEcoLab1.c in Sources */,
-				01138AEA27F1BE4900734060 /* CEcoLab1Factory.c in Sources */,
+				4E8712BF2EB30D7A00268B12 /* CEcoLab1Factory.c in Sources */,
+				4E8712C02EB30D7A00268B12 /* CEcoLab1.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -385,6 +454,8 @@
 				);
 				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -392,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = arm64;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				EXECUTABLE_PREFIX = lib;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -411,12 +483,14 @@
 				);
 				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
 		01138ACE27F1BDD300734060 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -439,12 +513,15 @@
 				);
 				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
 		01138ACF27F1BDD300734060 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -466,6 +543,7 @@
 				);
 				PRODUCT_NAME = "$(PRODUCT_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};

@@ -25,4 +25,15 @@ dependencies: \
   /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.FileSystemManagement1/SharedFiles/IEcoDriveInfo1.h \
   /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.FileSystemManagement1/SharedFiles/IEcoFileSystemManagement1.h \
   /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoLab1.h \
-  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IEcoLab1.h
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IEcoLab1.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Pro.Training/001.InsideACOM/Lessons/Lesson05/Eco.CalculatorC/SharedFiles/IEcoCalculatorY.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Pro.Training/001.InsideACOM/Lessons/Lesson02/Eco.CalculatorA/SharedFiles/IEcoCalculatorX.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Pro.Training/001.InsideACOM/Lessons/Lesson02/Eco.CalculatorA/SharedFiles/IdEcoCalculatorA.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Pro.Training/001.InsideACOM/Lessons/Lesson03/Eco.CalculatorB/SharedFiles/IdEcoCalculatorB.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Pro.Training/001.InsideACOM/Lessons/Lesson03/Eco.CalculatorB/SharedFiles/IEcoCalculatorX.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Pro.Training/001.InsideACOM/Lessons/Lesson05/Eco.CalculatorC/SharedFiles/IdEcoCalculatorC.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Pro.Training/001.InsideACOM/Lessons/Lesson05/Eco.CalculatorC/SharedFiles/IEcoCalculatorX.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Pro.Training/001.InsideACOM/Lessons/Lesson06/Eco.CalculatorD/SharedFiles/IdEcoCalculatorD.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Pro.Training/001.InsideACOM/Lessons/Lesson06/Eco.CalculatorD/SharedFiles/IEcoCalculatorY.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Pro.Training/001.InsideACOM/Lessons/Lesson07/Eco.CalculatorE/SharedFiles/IdEcoCalculatorE.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Pro.Training/001.InsideACOM/Lessons/Lesson07/Eco.CalculatorE/SharedFiles/IEcoCalculatorY.h

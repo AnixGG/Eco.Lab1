@@ -15,4 +15,11 @@ dependencies: \
   /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.MemoryManager1/SharedFiles/IdEcoMemoryManager1.h \
   /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.MemoryManager1/SharedFiles/IEcoMemoryManager1.h \
   /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.MemoryManager1/SharedFiles/IEcoMemoryAllocator1.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IEcoCalculatorX.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IEcoCalculatorY.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoCalculatorA.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoCalculatorB.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoCalculatorC.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoCalculatorD.h \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoCalculatorE.h \
   /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/HeaderFiles/CEcoLab1Factory.h

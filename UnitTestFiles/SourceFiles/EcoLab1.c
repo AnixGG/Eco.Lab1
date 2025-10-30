@@ -16,7 +16,8 @@
  * </автор>
  *
  */
-
+//#undef ECO_LIB
+//#define ECO_DLL
 /* Eco OS */
 #include "IEcoSystem1.h"
 
@@ -24,6 +25,135 @@
 #include "IdEcoInterfaceBus1.h"
 #include "IdEcoFileSystemManagement1.h"
 #include "IdEcoLab1.h"
+#include "IEcoCalculatorY.h"
+#include "IEcoCalculatorX.h"
+
+/* Components headers */
+#include "IdEcoCalculatorA.h"
+#include "IdEcoCalculatorB.h"
+#include "IdEcoCalculatorC.h"
+#include "IdEcoCalculatorD.h"
+#include "IdEcoCalculatorE.h"
+
+
+
+static void print_separator(const char* title) {
+    printf("\n-------------------\n%s\n-------------------\n", title);
+}
+
+
+
+void run_calculator_tests_ext(IEcoLab1* pIEcoLab1) {
+    void* tmp = 0;
+    IEcoCalculatorX* pIX = 0;
+    IEcoCalculatorY* pIY = 0;
+    IEcoLab1* pLabBack = 0;
+    int16_t a = 51;
+    int16_t b = 8;
+    int16_t res = 0;
+
+    printf("\n--- Calculator Interface Tests (extended) ---\n");
+
+    /* Получаем IEcoCalculatorX от IEcoLab1 */
+    printf("Query IEcoCalculatorX from IEcoLab1...");
+    if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorX, &tmp) == 0 && tmp != 0) {
+        pIX = (IEcoCalculatorX*)tmp;
+        printf("OK\n");
+    }
+    else {
+        printf("FAILED\n");
+    }
+
+    /* Addition/Subtraction tests via X */
+    if (pIX) {
+        print_separator("Addition Test");
+        printf("Input: %d + %d\n", a, b);
+        res = pIX->pVTbl->Addition(pIX, a, b);
+        printf("Result: %d\n", res);
+        print_separator("Subtraction Test");
+        printf("Input: %d - %d\n", a, b);
+        res = pIX->pVTbl->Subtraction(pIX, a, b);
+        printf("Result: %d\n", res);
+    }
+
+    /* Проверка: QueryInterface с pIX -> IEcoLab1 (обратная проверка) */
+    if (pIX) {
+        tmp = 0;
+        printf("\nChecking QI from IEcoCalculatorX to IEcoLab1...");
+        if (pIX->pVTbl->QueryInterface(pIX, &IID_IEcoLab1, &tmp) == 0 && tmp != 0) {
+            pLabBack = (IEcoLab1*)tmp;
+            printf("OK (got IEcoLab1 via pIX)\n");
+            /* освобождаем полученный интерфейс */
+            pLabBack->pVTbl->Release(pLabBack);
+            pLabBack = 0;
+        }
+        else {
+            printf("FAILED\n");
+        }
+    }
+
+    /* Получаем IEcoCalculatorY от IEcoLab1 */
+    tmp = 0;
+    printf("\nQuery IEcoCalculatorY from IEcoLab1...");
+    if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorY, &tmp) == 0 && tmp != 0) {
+        pIY = (IEcoCalculatorY*)tmp;
+        printf("OK\n");
+    }
+    else {
+        printf("FAILED\n");
+    }
+
+    /* Multiplication/Division tests via Y */
+    if (pIY) {
+        print_separator("Multiplication Test");
+        printf("Input: %d * %d\n", a, b);
+        res = pIY->pVTbl->Multiplication(pIY, a, b);
+        printf("Result: %d\n", res);
+        print_separator("Division Test");
+        printf("Input: %d / %d\n", a, b);
+        res = pIY->pVTbl->Division(pIY, a, b);
+        printf("Result: %d\n", res);
+    }
+
+    /* Проверка: QueryInterface с pIY -> IEcoLab1 (обратная проверка) */
+    if (pIY) {
+        tmp = 0;
+        printf("\nChecking QI from IEcoCalculatorY to IEcoLab1...");
+        if (pIY->pVTbl->QueryInterface(pIY, &IID_IEcoLab1, &tmp) == 0 && tmp != 0) {
+            pLabBack = (IEcoLab1*)tmp;
+            printf("OK (got IEcoLab1 via pIY)\n");
+            /* освобождаем полученный интерфейс */
+            pLabBack->pVTbl->Release(pLabBack);
+            pLabBack = 0;
+        }
+        else {
+            printf("FAILED\n");
+        }
+    }
+
+    /* Дополнительная демонстрация: QI между X и Y (через IEcoLab1 это должно сработать) */
+    if (pIX) {
+        tmp = 0;
+        printf("\nChecking QI from IEcoCalculatorX to IEcoCalculatorY...");
+        if (pIX->pVTbl->QueryInterface(pIX, &IID_IEcoCalculatorY, &tmp) == 0 && tmp != 0) {
+            IEcoCalculatorY* pYFromX = (IEcoCalculatorY*)tmp;
+            printf("OK (got IEcoCalculatorY via pIX)\n");
+            /* Пробуем вызвать на нём метод */
+            printf("Test Multiplication via IEcoCalculatorY obtained from IEcoCalculatorX: %d * %d = %d\n", a, b, pYFromX->pVTbl->Multiplication(pYFromX, a, b));
+            pYFromX->pVTbl->Release(pYFromX);
+        }
+        else {
+            printf("FAILED\n");
+        }
+    }
+
+    /* Освобождение интерфейсов */
+    if (pIX) pIX->pVTbl->Release(pIX);
+    if (pIY) pIY->pVTbl->Release(pIY);
+
+    printf("\nAll calculator interface tests complete.\n");
+}
+
 
 /*
  *
@@ -703,6 +833,74 @@ static int16_t compare_sort_algorithms(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1
     return ERR_ECO_SUCCESES;
 }
 
+
+static int test_lab2(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem) {
+    int32_t result;
+    size_t arr[3];
+    size_t elsize = sizeof(int);
+    IEcoCalculatorX* pIX;
+    IEcoCalculatorY* pIY;
+    IEcoLab1* pLab1;
+
+    pIX = (IEcoCalculatorX*)0;
+    pIY = (IEcoCalculatorY*)0;
+    pLab1 = (IEcoLab1*)0;
+
+    result = pIEcoLab1->pVTbl->Addition(pIEcoLab1, 100, 101);
+    printf("Addition: 10 + 101 = %d\n", (int)result);
+    result = pIEcoLab1->pVTbl->Subtraction(pIEcoLab1, 19, 4);
+    printf("Subtraction: 19 - 4 = %d\n", (int)result);
+    result = pIEcoLab1->pVTbl->Multiplication(pIEcoLab1, 10, 15);
+    printf("Multiplication: 10 * 15 = %d\n", (int)result);
+    result = pIEcoLab1->pVTbl->Division(pIEcoLab1, 15, 5);
+    printf("Division: 300 / 100 = %d\n", (int)result);
+
+
+    if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorX, (void**)&pIX) == 0 && pIX) {
+        result = pIX->pVTbl->Addition(pIX, 10, 19);
+        printf("IEcoCalculatorX Addition: 10 + 19 = %d\n", (int)result);
+        pIX->pVTbl->Release(pIX);
+        pIX = (IEcoCalculatorX*)0;
+    }
+    else {
+        printf("IEcoCalculatorX NOT AVAILABLE from Lab2\n");
+    }
+
+    if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorY, (void**)&pIY) == 0 && pIY) {
+        result = pIY->pVTbl->Multiplication(pIY, 15, 3);
+        printf("IEcoCalculatorY Multiplication: 15 * 3 = %d\n", (int)result);
+        pIY->pVTbl->Release(pIY);
+        pIY = (IEcoCalculatorY*)0;
+    }
+    else {
+        printf("IEcoCalculatorY NOT AVAILABLE from Lab2\n");
+    }
+        
+    if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorX, (void**)&pIX) == 0 && pIX) {
+        if (pIX->pVTbl->QueryInterface(pIX, &IID_IEcoLab1, (void**)&pLab1) == 0 && pLab1) {
+            arr[0] = 10;
+            arr[1] = 30;
+            arr[2] = 50;
+            result = pLab1->pVTbl->GnomeSort(pIEcoLab1, (void*)arr, 3, elsize, cmp_int_asc_eco);
+            printf("CalculatorX -> IEcoLab2:      ");
+            check_is_sorted(arr, 3, elsize, cmp_int_asc_eco);
+        }
+    }
+    
+    if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorY, (void**)&pIY) == 0 && pIY) {
+        if (pIY->pVTbl->QueryInterface(pIY, &IID_IEcoLab1, (void**)&pLab1) == 0 && pLab1) {
+            arr[0] = 10;
+            arr[1] = 30;
+            arr[2] = 50;
+            result = pLab1->pVTbl->GnomeSort(pIEcoLab1, (void*)arr, 3, elsize, cmp_int_asc_eco);
+            printf("CalculatorY -> IEcoLab2:      ");
+            check_is_sorted(arr, 3, elsize, cmp_int_asc_eco);
+        }
+    }
+    
+    return 0;
+}
+
 /*
  *
  * <сводка>
@@ -764,7 +962,7 @@ int16_t EcoMain(IEcoUnknown* pIUnk) {
         /* Освобождение интерфейсов в случае ошибки */
         goto Release;
     }
-    
+    printf("=== Lab1 ===\n");
     result = test_gnom_sort(pIEcoLab1, pIMem);
     if (result!=0){
         goto Release;
@@ -775,6 +973,8 @@ int16_t EcoMain(IEcoUnknown* pIUnk) {
         goto Release;
     }
     
+    printf("=== Lab2 ===\n");
+    test_lab2(pIEcoLab1, pIMem);
 
 Release:
 

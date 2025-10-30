@@ -44,6 +44,14 @@ typedef struct IEcoLab1VTbl {
     int16_t (ECOCALLMETHOD *GnomeSort)(/* in */ IEcoLab1Ptr_t me, /* in */ void* base,
                                     /* in */ size_t nmemb, /* in */ size_t size,
                                     /* in */ int (*compar)(const void*, const void*));
+    
+    int32_t(ECOCALLMETHOD* Addition)(IEcoLab1Ptr_t me, int16_t x, int16_t y);
+
+    int16_t(ECOCALLMETHOD* Subtraction)(/* in */ IEcoLab1Ptr_t me, /* in */ int16_t x, /* in */ int16_t y);
+
+    int32_t(ECOCALLMETHOD* Multiplication)(/* in */ IEcoLab1Ptr_t me, /* in */ int16_t x, /* in */ int16_t y);
+
+    int16_t(ECOCALLMETHOD* Division)(/* in */ IEcoLab1Ptr_t me, /* in */ int16_t x, /* in */ int16_t y);
 
 
 } IEcoLab1VTbl, *IEcoLab1VTblPtr;
