@@ -48,6 +48,9 @@ static int16_t ECOCALLMETHOD CEcoLab1_QueryInterface(/* in */ IEcoLab1Ptr_t me, 
         pCMe->m_pVTblIEcoLab1->AddRef((IEcoLab1*)pCMe);
     }
     else if (IsEqualUGUID(riid, &IID_IEcoCalculatorX)) {
+        if (pCMe->m_pInnerUnknown != 0) {
+            return pCMe->m_pInnerUnknown->pVTbl->QueryInterface(pCMe->m_pInnerUnknown, riid, ppv);
+        }
         *ppv = &pCMe->m_pVTblIEcoCalculatorX;
         pCMe->m_pVTblIEcoLab1->AddRef((IEcoLab1*)pCMe);
     }
@@ -82,6 +85,9 @@ static int16_t ECOCALLMETHOD CalculatorX_QueryInterface(/* in */ IEcoCalculatorX
         pCMe->m_pVTblIEcoLab1->AddRef((IEcoLab1*)pCMe);
     }
     else if (IsEqualUGUID(riid, &IID_IEcoCalculatorX)) {
+        if (pCMe->m_pInnerUnknown != 0) {
+            return pCMe->m_pInnerUnknown->pVTbl->QueryInterface(pCMe->m_pInnerUnknown, riid, ppv);
+        }
         *ppv = &pCMe->m_pVTblIEcoCalculatorX;
         pCMe->m_pVTblIEcoLab1->AddRef((IEcoLab1*)pCMe);
     }
@@ -102,7 +108,6 @@ static int16_t ECOCALLMETHOD CalculatorX_QueryInterface(/* in */ IEcoCalculatorX
 
 static int16_t ECOCALLMETHOD CalculatorY_QueryInterface(/* in */ IEcoCalculatorY* me, /* in */ const UGUID* riid, /* out */ void** ppv) {
     CEcoLab1* pCMe = (CEcoLab1*)((uint64_t)me - 2 * sizeof(IEcoUnknownPtr_t));
-    int16_t result = -1;
 
     /* Проверка указателей */
     if (me == 0 || ppv == 0) {
@@ -115,6 +120,9 @@ static int16_t ECOCALLMETHOD CalculatorY_QueryInterface(/* in */ IEcoCalculatorY
         pCMe->m_pVTblIEcoLab1->AddRef((IEcoLab1*)pCMe);
     }
     else if (IsEqualUGUID(riid, &IID_IEcoCalculatorX)) {
+        if (pCMe->m_pInnerUnknown != 0) {
+            return pCMe->m_pInnerUnknown->pVTbl->QueryInterface(pCMe->m_pInnerUnknown, riid, ppv);
+        }
         *ppv = &pCMe->m_pVTblIEcoCalculatorX;
         pCMe->m_pVTblIEcoLab1->AddRef((IEcoLab1*)pCMe);
     }

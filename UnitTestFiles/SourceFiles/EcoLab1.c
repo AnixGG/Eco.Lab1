@@ -841,6 +841,8 @@ static int test_lab2(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem) {
     IEcoCalculatorX* pIX;
     IEcoCalculatorY* pIY;
     IEcoLab1* pLab1;
+    void* tmp;
+    IEcoUnknown* pUnk;
 
     pIX = (IEcoCalculatorX*)0;
     pIY = (IEcoCalculatorY*)0;
@@ -875,6 +877,21 @@ static int test_lab2(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem) {
     else {
         printf("IEcoCalculatorY NOT AVAILABLE from Lab2\n");
     }
+    
+    
+    if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorX, (void**)&pIX) == 0 && pIX) {
+        printf("%-35s", "Aggragation IEcoCalculatorX:");
+        result = pIX->pVTbl->QueryInterface(pIX, &IID_IEcoCalculatorX, &tmp);
+        if (result == 0){
+            pUnk = (IEcoUnknown*)tmp;
+            pUnk->pVTbl->Release(pUnk);
+            printf("PASS\n");
+        }
+        else {
+            printf("FAIL\n");
+        }
+    }
+    
         
     if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorX, (void**)&pIX) == 0 && pIX) {
         if (pIX->pVTbl->QueryInterface(pIX, &IID_IEcoLab1, (void**)&pLab1) == 0 && pLab1) {
@@ -882,7 +899,7 @@ static int test_lab2(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem) {
             arr[1] = 30;
             arr[2] = 50;
             result = pLab1->pVTbl->GnomeSort(pIEcoLab1, (void*)arr, 3, elsize, cmp_int_asc_eco);
-            printf("CalculatorX -> IEcoLab2:      ");
+            printf("%-35s", "CalculatorX -> IEcoLab1(Lab2):");
             check_is_sorted(arr, 3, elsize, cmp_int_asc_eco);
         }
     }
@@ -893,7 +910,7 @@ static int test_lab2(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem) {
             arr[1] = 30;
             arr[2] = 50;
             result = pLab1->pVTbl->GnomeSort(pIEcoLab1, (void*)arr, 3, elsize, cmp_int_asc_eco);
-            printf("CalculatorY -> IEcoLab2:      ");
+            printf("%-35s", "CalculatorY -> IEcoLab1(Lab2):");
             check_is_sorted(arr, 3, elsize, cmp_int_asc_eco);
         }
     }
