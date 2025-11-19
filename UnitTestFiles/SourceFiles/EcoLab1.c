@@ -848,16 +848,6 @@ static int test_lab2(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem) {
     pIY = (IEcoCalculatorY*)0;
     pLab1 = (IEcoLab1*)0;
 
-    result = pIEcoLab1->pVTbl->Addition(pIEcoLab1, 100, 101);
-    printf("Addition: 10 + 101 = %d\n", (int)result);
-    result = pIEcoLab1->pVTbl->Subtraction(pIEcoLab1, 19, 4);
-    printf("Subtraction: 19 - 4 = %d\n", (int)result);
-    result = pIEcoLab1->pVTbl->Multiplication(pIEcoLab1, 10, 15);
-    printf("Multiplication: 10 * 15 = %d\n", (int)result);
-    result = pIEcoLab1->pVTbl->Division(pIEcoLab1, 15, 5);
-    printf("Division: 300 / 100 = %d\n", (int)result);
-
-
     if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorX, (void**)&pIX) == 0 && pIX) {
         result = pIX->pVTbl->Addition(pIX, 10, 19);
         printf("IEcoCalculatorX Addition: 10 + 19 = %d\n", (int)result);
@@ -865,7 +855,17 @@ static int test_lab2(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem) {
         pIX = (IEcoCalculatorX*)0;
     }
     else {
-        printf("IEcoCalculatorX NOT AVAILABLE from Lab2\n");
+        printf("IEcoCalculatorX Addition: =FAIL; IEcoCalculatorX NOT AVAILABLE from Lab2\n");
+    }
+    
+    if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorX, (void**)&pIX) == 0 && pIX) {
+        result = pIX->pVTbl->Addition(pIX, 10, 19);
+        printf("IEcoCalculatorX Subtraction: 10 - 19 = %d\n", (int)result);
+        pIX->pVTbl->Release(pIX);
+        pIX = (IEcoCalculatorX*)0;
+    }
+    else {
+        printf("IEcoCalculatorX Subtraction: =FAIL; IEcoCalculatorX NOT AVAILABLE from Lab2\n");
     }
 
     if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorY, (void**)&pIY) == 0 && pIY) {
@@ -875,7 +875,17 @@ static int test_lab2(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem) {
         pIY = (IEcoCalculatorY*)0;
     }
     else {
-        printf("IEcoCalculatorY NOT AVAILABLE from Lab2\n");
+        printf("IEcoCalculatorY Multiplication: =FAIL; IEcoCalculatorY NOT AVAILABLE from Lab2\n");
+    }
+    
+    if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorY, (void**)&pIY) == 0 && pIY) {
+        result = pIY->pVTbl->Multiplication(pIY, 15, 3);
+        printf("IEcoCalculatorY Division: 15 / 3 = %d\n", (int)result);
+        pIY->pVTbl->Release(pIY);
+        pIY = (IEcoCalculatorY*)0;
+    }
+    else {
+        printf("IEcoCalculatorY Division: =FAIL; IEcoCalculatorY NOT AVAILABLE from Lab2\n");
     }
     
     

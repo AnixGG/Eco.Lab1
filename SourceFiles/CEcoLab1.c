@@ -243,20 +243,20 @@ static uint32_t ECOCALLMETHOD CalculatorY_Release(/* in */ IEcoCalculatorY* me) 
 }
 
 
-static int32_t ECOCALLMETHOD CEcoLab1_Addition(IEcoLab1Ptr_t me, int16_t x, int16_t y) {
-    CEcoLab1* pCMe = (CEcoLab1*)me;
-    int32_t result = -1;
-
-    /* Проверка указателей */
-    if (me == 0) {
-        return result;
-    }
-
-    if (pCMe->m_pIEcoCalculatorX != NULL) {
-        return pCMe->m_pIEcoCalculatorX->pVTbl->Addition(pCMe->m_pIEcoCalculatorX, x, y);
-    }
-    return result;
-}
+//static int32_t ECOCALLMETHOD CEcoLab1_Addition(IEcoLab1Ptr_t me, int16_t x, int16_t y) {
+//    CEcoLab1* pCMe = (CEcoLab1*)me;
+//    int32_t result = -1;
+//
+//    /* Проверка указателей */
+//    if (me == 0) {
+//        return result;
+//    }
+//
+//    if (pCMe->m_pIEcoCalculatorX != NULL) {
+//        return pCMe->m_pIEcoCalculatorX->pVTbl->Addition(pCMe->m_pIEcoCalculatorX, x, y);
+//    }
+//    return result;
+//}
 
 static int32_t ECOCALLMETHOD CalculatorX_Addition(IEcoCalculatorX* me, int16_t x, int16_t y) {
     CEcoLab1* pCMe = (CEcoLab1*)((uint64_t)me - sizeof(IEcoUnknownPtr_t));
@@ -272,21 +272,21 @@ static int32_t ECOCALLMETHOD CalculatorX_Addition(IEcoCalculatorX* me, int16_t x
     }
     return result;
 }
-
-static int16_t ECOCALLMETHOD CEcoLab1_Subtraction(/* in */ IEcoLab1Ptr_t me, /* in */ int16_t x, /* in */ int16_t y) {
-    CEcoLab1* pCMe = (CEcoLab1*)me;
-    int32_t result = -1;
-
-    /* Проверка указателей */
-    if (me == 0) {
-        return result;
-    }
-
-    if (pCMe->m_pIEcoCalculatorX != NULL) {
-        return pCMe->m_pIEcoCalculatorX->pVTbl->Subtraction(pCMe->m_pIEcoCalculatorX, x, y);
-    }
-    return result;
-}
+//
+//static int16_t ECOCALLMETHOD CEcoLab1_Subtraction(/* in */ IEcoLab1Ptr_t me, /* in */ int16_t x, /* in */ int16_t y) {
+//    CEcoLab1* pCMe = (CEcoLab1*)me;
+//    int32_t result = -1;
+//
+//    /* Проверка указателей */
+//    if (me == 0) {
+//        return result;
+//    }
+//
+//    if (pCMe->m_pIEcoCalculatorX != NULL) {
+//        return pCMe->m_pIEcoCalculatorX->pVTbl->Subtraction(pCMe->m_pIEcoCalculatorX, x, y);
+//    }
+//    return result;
+//}
 
 static int16_t ECOCALLMETHOD CalculatorX_Subtraction(IEcoCalculatorX* me, int16_t x, int16_t y) {
     CEcoLab1* pCMe = (CEcoLab1*)((uint64_t)me - sizeof(IEcoUnknownPtr_t));
@@ -302,21 +302,21 @@ static int16_t ECOCALLMETHOD CalculatorX_Subtraction(IEcoCalculatorX* me, int16_
     }
     return result;
 }
-
-static int32_t ECOCALLMETHOD CEcoLab1_Multiplication(/* in */ IEcoLab1Ptr_t me, /* in */ int16_t x, /* in */ int16_t y) {
-    CEcoLab1* pCMe = (CEcoLab1*)me;
-    int32_t result = -1;
-
-    /* Проверка указателей */
-    if (me == 0) {
-        return result;
-    }
-
-    if (pCMe->m_pIEcoCalculatorY != NULL) {
-        return pCMe->m_pIEcoCalculatorY->pVTbl->Multiplication(pCMe->m_pIEcoCalculatorY, x, y);
-    }
-    return result;
-}
+//
+//static int32_t ECOCALLMETHOD CEcoLab1_Multiplication(/* in */ IEcoLab1Ptr_t me, /* in */ int16_t x, /* in */ int16_t y) {
+//    CEcoLab1* pCMe = (CEcoLab1*)me;
+//    int32_t result = -1;
+//
+//    /* Проверка указателей */
+//    if (me == 0) {
+//        return result;
+//    }
+//
+//    if (pCMe->m_pIEcoCalculatorY != NULL) {
+//        return pCMe->m_pIEcoCalculatorY->pVTbl->Multiplication(pCMe->m_pIEcoCalculatorY, x, y);
+//    }
+//    return result;
+//}
 
 static int32_t ECOCALLMETHOD CalculatorY_Multiplication(/* in */ IEcoCalculatorY* me, /* in */ int16_t x, /* in */ int16_t y) {
     CEcoLab1* pCMe = (CEcoLab1*)((uint64_t)me - 2 * sizeof(IEcoUnknownPtr_t));
@@ -332,21 +332,21 @@ static int32_t ECOCALLMETHOD CalculatorY_Multiplication(/* in */ IEcoCalculatorY
     }
     return result;
 }
-
-static int16_t ECOCALLMETHOD CEcoLab1_Division(/* in */ IEcoLab1Ptr_t me, /* in */ int16_t x, /* in */ int16_t y) {
-    CEcoLab1* pCMe = (CEcoLab1*)me;
-    int32_t result = -1;
-
-    /* Проверка указателей */
-    if (me == 0) {
-        return result;
-    }
-
-    if (pCMe->m_pIEcoCalculatorY != NULL) {
-        return pCMe->m_pIEcoCalculatorY->pVTbl->Division(pCMe->m_pIEcoCalculatorY, x, y);
-    }
-    return result;
-}
+//
+//static int16_t ECOCALLMETHOD CEcoLab1_Division(/* in */ IEcoLab1Ptr_t me, /* in */ int16_t x, /* in */ int16_t y) {
+//    CEcoLab1* pCMe = (CEcoLab1*)me;
+//    int32_t result = -1;
+//
+//    /* Проверка указателей */
+//    if (me == 0) {
+//        return result;
+//    }
+//
+//    if (pCMe->m_pIEcoCalculatorY != NULL) {
+//        return pCMe->m_pIEcoCalculatorY->pVTbl->Division(pCMe->m_pIEcoCalculatorY, x, y);
+//    }
+//    return result;
+//}
 
 static int16_t ECOCALLMETHOD CalculatorY_Division(/* in */ IEcoCalculatorY* me, /* in */ int16_t x, /* in */ int16_t y) {
     CEcoLab1* pCMe = (CEcoLab1*)((uint64_t)me - 2 * sizeof(IEcoUnknownPtr_t));
@@ -455,10 +455,6 @@ IEcoLab1VTbl g_x277FC00C35624096AFCFC125B94EEC90VTbl = {
     CEcoLab1_AddRef,
     CEcoLab1_Release,
     CEcoLab1_GnomeSort,
-    CEcoLab1_Addition,
-    CEcoLab1_Subtraction,
-    CEcoLab1_Multiplication,
-    CEcoLab1_Division,
 };
 
 IEcoCalculatorXVTbl g_x9322111622484742AE0682819447843DVTbl = {

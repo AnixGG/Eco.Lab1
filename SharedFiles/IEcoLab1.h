@@ -45,15 +45,6 @@ typedef struct IEcoLab1VTbl {
                                     /* in */ size_t nmemb, /* in */ size_t size,
                                     /* in */ int (*compar)(const void*, const void*));
     
-    int32_t(ECOCALLMETHOD* Addition)(IEcoLab1Ptr_t me, int16_t x, int16_t y);
-
-    int16_t(ECOCALLMETHOD* Subtraction)(/* in */ IEcoLab1Ptr_t me, /* in */ int16_t x, /* in */ int16_t y);
-
-    int32_t(ECOCALLMETHOD* Multiplication)(/* in */ IEcoLab1Ptr_t me, /* in */ int16_t x, /* in */ int16_t y);
-
-    int16_t(ECOCALLMETHOD* Division)(/* in */ IEcoLab1Ptr_t me, /* in */ int16_t x, /* in */ int16_t y);
-
-
 } IEcoLab1VTbl, *IEcoLab1VTblPtr;
 
 interface IEcoLab1 {
