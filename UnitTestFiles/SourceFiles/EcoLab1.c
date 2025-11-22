@@ -859,7 +859,7 @@ static int test_lab2(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem) {
     }
     
     if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorX, (void**)&pIX) == 0 && pIX) {
-        result = pIX->pVTbl->Addition(pIX, 10, 19);
+        result = pIX->pVTbl->Subtraction(pIX, 10, 19);
         printf("IEcoCalculatorX Subtraction: 10 - 19 = %d\n", (int)result);
         pIX->pVTbl->Release(pIX);
         pIX = (IEcoCalculatorX*)0;
@@ -879,7 +879,7 @@ static int test_lab2(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem) {
     }
     
     if (pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoCalculatorY, (void**)&pIY) == 0 && pIY) {
-        result = pIY->pVTbl->Multiplication(pIY, 15, 3);
+        result = pIY->pVTbl->Division(pIY, 15, 3);
         printf("IEcoCalculatorY Division: 15 / 3 = %d\n", (int)result);
         pIY->pVTbl->Release(pIY);
         pIY = (IEcoCalculatorY*)0;
