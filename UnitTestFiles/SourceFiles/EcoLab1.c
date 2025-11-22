@@ -938,13 +938,13 @@ int16_t AdviseConnectionPoint(IEcoLab1* pIEcoLab1, IEcoLab1Events* pSink, uint32
     IEcoConnectionPoint* pCP = 0;
     int16_t result = 0;
 
-    // 1. Запрашиваем контейнер точек подключения
+    // Запрашиваем контейнер точек подключения
     result = pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoConnectionPointContainer, (void**)&pCPC);
     if (result == 0 && pCPC != 0) {
-        // 2. Находим точку подключения для нашего интерфейса событий
+        // Находим точку подключения для нашего интерфейса событий
         result = pCPC->pVTbl->FindConnectionPoint(pCPC, &IID_IEcoLab1Events, &pCP);
         if (result == 0 && pCP != 0) {
-            // 3. Подписываемся (Advise)
+            // Advise
             result = pCP->pVTbl->Advise(pCP, (IEcoUnknown*)pSink, pcCookie);
             pCP->pVTbl->Release(pCP);
         }
@@ -976,54 +976,68 @@ int16_t UnadviseConnectionPoint(IEcoLab1* pIEcoLab1, uint32_t cCookie) {
 /*
  * ТЕСТ СОБЫТИЙ (Many-to-Many / One-to-Many)
  */
-void test_connection_points_events(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem) {
+void test_connection_points_events(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem, IEcoInterfaceBus1* pIBus) {
+    IEcoLab1* pIEcoLab1_Second = 0; // Второй компонент
     IEcoLab1Events* pSink1 = 0;
     IEcoLab1Events* pSink2 = 0;
-    uint32_t cookie1 = 0;
-    uint32_t cookie2 = 0;
+    uint32_t cookie1_1 = 0; // Sink1 к Comp1
+    uint32_t cookie2_1 = 0; // Sink2 к Comp1
+    uint32_t cookie1_2 = 0; // Sink1 к Comp2
     int* arr;
     size_t nmemb = 5;
     size_t elsize = sizeof(int);
+    int16_t result = 0;
 
-    printf("\n=== Starting Connection Point Event Test ===\n");
+    printf("\n=== Starting Connection Point Event Test (Many-to-Many) ===\n");
 
-    // 1. Создаем ДВА разных приемника
-    createCEcoLab1Sink(pIMem, "Sink_1 (Observer)", &pSink1);
-    createCEcoLab1Sink(pIMem, "Sink_2 (Logger)", &pSink2);
-
-    // 2. Подключаем ОБА приемника к ОДНОМУ компоненту
-    if (pSink1) {
-        if (AdviseConnectionPoint(pIEcoLab1, pSink1, &cookie1) == 0) {
-            printf("Sink 1 connected successfully.\n");
-        }
-    }
-    if (pSink2) {
-        if (AdviseConnectionPoint(pIEcoLab1, pSink2, &cookie2) == 0) {
-            printf("Sink 2 connected successfully.\n");
-        }
+    //  Создаем ВТОРОЙ компонент (чтобы было Many источников)
+    result = pIBus->pVTbl->QueryComponent(pIBus, &CID_EcoLab1, 0, &IID_IEcoLab1, (void**) &pIEcoLab1_Second);
+    if (result != 0 || pIEcoLab1_Second == 0) {
+        printf("Failed to create second component!\n");
+        return;
     }
 
-    // 3. Выполняем сортировку (должны пойти события в оба синка)
-    printf("\n--- Running GnomeSort with events ---\n");
+    createCEcoLab1Sink(pIMem, "Sink_1 (Common)", &pSink1);
+    createCEcoLab1Sink(pIMem, "Sink_2 (Exclusive)", &pSink2);
+
+    // 3. Настраиваем связи (Многие-ко-Многим)
+    
+    // Связь 1: Компонент 1 -> Sink 1
+    AdviseConnectionPoint(pIEcoLab1, pSink1, &cookie1_1);
+    
+    // Связь 2: Компонент 1 -> Sink 2
+    AdviseConnectionPoint(pIEcoLab1, pSink2, &cookie2_1);
+
+    // Связь 3: Компонент 2 -> Sink 1 (Sink 1 теперь слушает обоих!)
+    AdviseConnectionPoint(pIEcoLab1_Second, pSink1, &cookie1_2);
+
+    printf("Connections established:\n");
+    printf("  Comp1 -> Sink1, Sink2\n");
+    printf("  Comp2 -> Sink1\n");
+
+    printf("\n--- Running GnomeSort on Component 1 ---\n");
     arr = (int*)pIMem->pVTbl->Alloc(pIMem, nmemb * elsize);
-    arr[0] = 5; arr[1] = 4; arr[2] = 3; arr[3] = 2; arr[4] = 1; // Worst case
-
-    // Запускаем сортировку
-    // Тут компонент будет дергать Fire_OnSortStart, Fire_OnSortSwap...
+    arr[0] = 2; arr[1] = 1; arr[2] = 3; arr[3] = 5; arr[4] = 4;
     pIEcoLab1->pVTbl->GnomeSort(pIEcoLab1, arr, nmemb, elsize, cmp_int_asc_eco);
+    pIMem->pVTbl->Free(pIMem, arr);
+
+    printf("\n--- Running GnomeSort on Component 2 ---\n");
+    arr = (int*)pIMem->pVTbl->Alloc(pIMem, nmemb * elsize);
+    arr[0] = 9; arr[1] = 8; arr[2] = 7; arr[3] = 6; arr[4] = 5;
+    pIEcoLab1_Second->pVTbl->GnomeSort(pIEcoLab1_Second, arr, nmemb, elsize, cmp_int_asc_eco);
+    // Ожидаем: Только Sink1 выведет логи
+    pIMem->pVTbl->Free(pIMem, arr);
 
     printf("--- Sort finished ---\n\n");
 
-    // 4. Отключаем приемники
-    if (cookie1) UnadviseConnectionPoint(pIEcoLab1, cookie1);
-    if (cookie2) UnadviseConnectionPoint(pIEcoLab1, cookie2);
+    if (cookie1_1) UnadviseConnectionPoint(pIEcoLab1, cookie1_1);
+    if (cookie2_1) UnadviseConnectionPoint(pIEcoLab1, cookie2_1);
+    if (cookie1_2) UnadviseConnectionPoint(pIEcoLab1_Second, cookie1_2);
 
-    // 5. Освобождаем
     if (pSink1) pSink1->pVTbl->Release(pSink1);
     if (pSink2) pSink2->pVTbl->Release(pSink2);
-    if (arr) pIMem->pVTbl->Free(pIMem, arr);
+    if (pIEcoLab1_Second) pIEcoLab1_Second->pVTbl->Release(pIEcoLab1_Second);
 }
-
 /*
  *
  * <сводка>
@@ -1100,7 +1114,7 @@ int16_t EcoMain(IEcoUnknown* pIUnk) {
     test_lab2(pIEcoLab1, pIMem);
     
     printf("=== Lab3 ===\n");
-    test_connection_points_events(pIEcoLab1, pIMem);
+    test_connection_points_events(pIEcoLab1, pIMem, pIBus);
 
 Release:
 

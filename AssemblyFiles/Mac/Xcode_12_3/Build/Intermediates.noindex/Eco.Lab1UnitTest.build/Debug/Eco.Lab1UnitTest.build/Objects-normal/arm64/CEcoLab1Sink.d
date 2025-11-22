@@ -1,0 +1,20 @@
+dependencies: \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Darwin.modulemap \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/UnitTestFiles/SourceFiles/CEcoLab1Sink.c \
+  /Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/UnitTestFiles/HeaderFiles/CEcoLab1Sink.h \
+  ../../../SharedFiles/IEcoLab1Events.h \
+  /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.Core1/SharedFiles/IEcoBase1.h \
+  /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.Core1/SharedFiles/ErrEcoCodes.h \
+  /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.Core1/SharedFiles/depend.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/DarwinFoundation.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/16/include/module.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c_standard_library.modulemap \
+  /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.Core1/SharedFiles/byteswap.h \
+  /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.Core1/SharedFiles/atomic.h \
+  /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.Core1/SharedFiles/IEcoSystem1.h \
+  /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.MemoryManager1/SharedFiles/IdEcoMemoryManager1.h \
+  /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.MemoryManager1/SharedFiles/IEcoMemoryManager1.h \
+  /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.MemoryManager1/SharedFiles/IEcoMemoryAllocator1.h \
+  /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.Core1/SharedFiles/IEcoConnectionPointContainer.h \
+  /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.Core1/SharedFiles/IEcoEnumConnectionPoints.h \
+  /Users/niazgazizullin/Eco/Eco.Framework_20250429/Eco.Core1/SharedFiles/IEcoConnectionPoint.h
