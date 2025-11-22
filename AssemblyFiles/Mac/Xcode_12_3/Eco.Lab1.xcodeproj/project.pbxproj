@@ -15,6 +15,32 @@
 		01138AE027F1BE2C00734060 /* IEcoLab1.h in Headers */ = {isa = PBXBuildFile; fileRef = 01138ADD27F1BE2C00734060 /* IEcoLab1.h */; };
 		01138AE127F1BE2C00734060 /* IdEcoLab1.h in Headers */ = {isa = PBXBuildFile; fileRef = 01138ADE27F1BE2C00734060 /* IdEcoLab1.h */; };
 		01138AE227F1BE2C00734060 /* IdEcoLab1.h in Headers */ = {isa = PBXBuildFile; fileRef = 01138ADE27F1BE2C00734060 /* IdEcoLab1.h */; };
+		4E4907422ED24BB000864CDD /* CEcoLab1ConnectionPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49073F2ED24BB000864CDD /* CEcoLab1ConnectionPoint.c */; };
+		4E4907432ED24BB000864CDD /* CEcoLab1EnumConnections.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E4907412ED24BB000864CDD /* CEcoLab1EnumConnections.c */; };
+		4E4907442ED24BB000864CDD /* CEcoLab1EnumConnectionPoints.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E4907402ED24BB000864CDD /* CEcoLab1EnumConnectionPoints.c */; };
+		4E4907452ED24BB000864CDD /* CEcoLab1ConnectionPoint.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E49073F2ED24BB000864CDD /* CEcoLab1ConnectionPoint.c */; };
+		4E4907462ED24BB000864CDD /* CEcoLab1EnumConnections.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E4907412ED24BB000864CDD /* CEcoLab1EnumConnections.c */; };
+		4E4907472ED24BB000864CDD /* CEcoLab1EnumConnectionPoints.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E4907402ED24BB000864CDD /* CEcoLab1EnumConnectionPoints.c */; };
+		4E49074F2ED24BC800864CDD /* IEcoLab1Events.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49074D2ED24BC800864CDD /* IEcoLab1Events.h */; };
+		4E4907502ED24BC800864CDD /* IEcoList1.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49074E2ED24BC800864CDD /* IEcoList1.h */; };
+		4E4907512ED24BC800864CDD /* IdEcoList1.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4907482ED24BC800864CDD /* IdEcoList1.h */; };
+		4E4907522ED24BC800864CDD /* IEcoEnumConnections.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49074C2ED24BC800864CDD /* IEcoEnumConnections.h */; };
+		4E4907532ED24BC800864CDD /* IEcoConnectionPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4907492ED24BC800864CDD /* IEcoConnectionPoint.h */; };
+		4E4907542ED24BC800864CDD /* IEcoEnumConnectionPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49074B2ED24BC800864CDD /* IEcoEnumConnectionPoints.h */; };
+		4E4907552ED24BC800864CDD /* IEcoConnectionPointContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49074A2ED24BC800864CDD /* IEcoConnectionPointContainer.h */; };
+		4E4907562ED24BC800864CDD /* IEcoLab1Events.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49074D2ED24BC800864CDD /* IEcoLab1Events.h */; };
+		4E4907572ED24BC800864CDD /* IEcoList1.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49074E2ED24BC800864CDD /* IEcoList1.h */; };
+		4E4907582ED24BC800864CDD /* IdEcoList1.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4907482ED24BC800864CDD /* IdEcoList1.h */; };
+		4E4907592ED24BC800864CDD /* IEcoEnumConnections.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49074C2ED24BC800864CDD /* IEcoEnumConnections.h */; };
+		4E49075A2ED24BC800864CDD /* IEcoConnectionPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4907492ED24BC800864CDD /* IEcoConnectionPoint.h */; };
+		4E49075B2ED24BC800864CDD /* IEcoEnumConnectionPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49074B2ED24BC800864CDD /* IEcoEnumConnectionPoints.h */; };
+		4E49075C2ED24BC800864CDD /* IEcoConnectionPointContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49074A2ED24BC800864CDD /* IEcoConnectionPointContainer.h */; };
+		4E4907602ED24BDD00864CDD /* CEcoLab1ConnectionPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49075D2ED24BDD00864CDD /* CEcoLab1ConnectionPoint.h */; };
+		4E4907612ED24BDD00864CDD /* CEcoLab1EnumConnectionPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49075E2ED24BDD00864CDD /* CEcoLab1EnumConnectionPoints.h */; };
+		4E4907622ED24BDD00864CDD /* CEcoLab1EnumConnections.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49075F2ED24BDD00864CDD /* CEcoLab1EnumConnections.h */; };
+		4E4907632ED24BDD00864CDD /* CEcoLab1ConnectionPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49075D2ED24BDD00864CDD /* CEcoLab1ConnectionPoint.h */; };
+		4E4907642ED24BDD00864CDD /* CEcoLab1EnumConnectionPoints.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49075E2ED24BDD00864CDD /* CEcoLab1EnumConnectionPoints.h */; };
+		4E4907652ED24BDD00864CDD /* CEcoLab1EnumConnections.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E49075F2ED24BDD00864CDD /* CEcoLab1EnumConnections.h */; };
 		4E553C242EAE7CA300CA97D8 /* IdEcoCalculatorC.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C1D2EAE7CA300CA97D8 /* IdEcoCalculatorC.h */; };
 		4E553C262EAE7CA300CA97D8 /* IEcoCalculatorY.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C222EAE7CA300CA97D8 /* IEcoCalculatorY.h */; };
 		4E553C272EAE7CA300CA97D8 /* IdEcoCalculatorD.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E553C1E2EAE7CA300CA97D8 /* IdEcoCalculatorD.h */; };
@@ -48,6 +74,19 @@
 		01138AD627F1BE1A00734060 /* CEcoLab1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CEcoLab1.h; path = ../../../HeaderFiles/CEcoLab1.h; sourceTree = "<group>"; };
 		01138ADD27F1BE2C00734060 /* IEcoLab1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IEcoLab1.h; path = ../../../SharedFiles/IEcoLab1.h; sourceTree = "<group>"; };
 		01138ADE27F1BE2C00734060 /* IdEcoLab1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IdEcoLab1.h; path = ../../../SharedFiles/IdEcoLab1.h; sourceTree = "<group>"; };
+		4E49073F2ED24BB000864CDD /* CEcoLab1ConnectionPoint.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = CEcoLab1ConnectionPoint.c; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SourceFiles/CEcoLab1ConnectionPoint.c"; sourceTree = "<absolute>"; };
+		4E4907402ED24BB000864CDD /* CEcoLab1EnumConnectionPoints.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = CEcoLab1EnumConnectionPoints.c; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SourceFiles/CEcoLab1EnumConnectionPoints.c"; sourceTree = "<absolute>"; };
+		4E4907412ED24BB000864CDD /* CEcoLab1EnumConnections.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = CEcoLab1EnumConnections.c; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SourceFiles/CEcoLab1EnumConnections.c"; sourceTree = "<absolute>"; };
+		4E4907482ED24BC800864CDD /* IdEcoList1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IdEcoList1.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoList1.h"; sourceTree = "<absolute>"; };
+		4E4907492ED24BC800864CDD /* IEcoConnectionPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IEcoConnectionPoint.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IEcoConnectionPoint.h"; sourceTree = "<absolute>"; };
+		4E49074A2ED24BC800864CDD /* IEcoConnectionPointContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IEcoConnectionPointContainer.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IEcoConnectionPointContainer.h"; sourceTree = "<absolute>"; };
+		4E49074B2ED24BC800864CDD /* IEcoEnumConnectionPoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IEcoEnumConnectionPoints.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IEcoEnumConnectionPoints.h"; sourceTree = "<absolute>"; };
+		4E49074C2ED24BC800864CDD /* IEcoEnumConnections.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IEcoEnumConnections.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IEcoEnumConnections.h"; sourceTree = "<absolute>"; };
+		4E49074D2ED24BC800864CDD /* IEcoLab1Events.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IEcoLab1Events.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IEcoLab1Events.h"; sourceTree = "<absolute>"; };
+		4E49074E2ED24BC800864CDD /* IEcoList1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IEcoList1.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IEcoList1.h"; sourceTree = "<absolute>"; };
+		4E49075D2ED24BDD00864CDD /* CEcoLab1ConnectionPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CEcoLab1ConnectionPoint.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/HeaderFiles/CEcoLab1ConnectionPoint.h"; sourceTree = "<absolute>"; };
+		4E49075E2ED24BDD00864CDD /* CEcoLab1EnumConnectionPoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CEcoLab1EnumConnectionPoints.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/HeaderFiles/CEcoLab1EnumConnectionPoints.h"; sourceTree = "<absolute>"; };
+		4E49075F2ED24BDD00864CDD /* CEcoLab1EnumConnections.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CEcoLab1EnumConnections.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/HeaderFiles/CEcoLab1EnumConnections.h"; sourceTree = "<absolute>"; };
 		4E553C1B2EAE7CA300CA97D8 /* IdEcoCalculatorA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IdEcoCalculatorA.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoCalculatorA.h"; sourceTree = "<absolute>"; };
 		4E553C1C2EAE7CA300CA97D8 /* IdEcoCalculatorB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IdEcoCalculatorB.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoCalculatorB.h"; sourceTree = "<absolute>"; };
 		4E553C1D2EAE7CA300CA97D8 /* IdEcoCalculatorC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = IdEcoCalculatorC.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/SharedFiles/IdEcoCalculatorC.h"; sourceTree = "<absolute>"; };
@@ -112,6 +151,9 @@
 		01138AD227F1BDE700734060 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				4E49073F2ED24BB000864CDD /* CEcoLab1ConnectionPoint.c */,
+				4E4907402ED24BB000864CDD /* CEcoLab1EnumConnectionPoints.c */,
+				4E4907412ED24BB000864CDD /* CEcoLab1EnumConnections.c */,
 				4E8712BB2EB30D7A00268B12 /* CEcoLab1.c */,
 				4E8712BC2EB30D7A00268B12 /* CEcoLab1Factory.c */,
 			);
@@ -121,6 +163,13 @@
 		01138AD327F1BDF100734060 /* Shared Files */ = {
 			isa = PBXGroup;
 			children = (
+				4E4907482ED24BC800864CDD /* IdEcoList1.h */,
+				4E4907492ED24BC800864CDD /* IEcoConnectionPoint.h */,
+				4E49074A2ED24BC800864CDD /* IEcoConnectionPointContainer.h */,
+				4E49074B2ED24BC800864CDD /* IEcoEnumConnectionPoints.h */,
+				4E49074C2ED24BC800864CDD /* IEcoEnumConnections.h */,
+				4E49074D2ED24BC800864CDD /* IEcoLab1Events.h */,
+				4E49074E2ED24BC800864CDD /* IEcoList1.h */,
 				4E553C1B2EAE7CA300CA97D8 /* IdEcoCalculatorA.h */,
 				4E553C1C2EAE7CA300CA97D8 /* IdEcoCalculatorB.h */,
 				4E553C1D2EAE7CA300CA97D8 /* IdEcoCalculatorC.h */,
@@ -137,6 +186,9 @@
 		01138AD427F1BDFB00734060 /* Header Files */ = {
 			isa = PBXGroup;
 			children = (
+				4E49075D2ED24BDD00864CDD /* CEcoLab1ConnectionPoint.h */,
+				4E49075E2ED24BDD00864CDD /* CEcoLab1EnumConnectionPoints.h */,
+				4E49075F2ED24BDD00864CDD /* CEcoLab1EnumConnections.h */,
 				01138AD627F1BE1A00734060 /* CEcoLab1.h */,
 				01138AD527F1BE1A00734060 /* CEcoLab1Factory.h */,
 			);
@@ -170,6 +222,16 @@
 				4E553C2F2EAE7CA300CA97D8 /* IEcoCalculatorY.h in Headers */,
 				4E553C302EAE7CA300CA97D8 /* IdEcoCalculatorD.h in Headers */,
 				4E553C312EAE7CA300CA97D8 /* IdEcoCalculatorA.h in Headers */,
+				4E4907562ED24BC800864CDD /* IEcoLab1Events.h in Headers */,
+				4E4907572ED24BC800864CDD /* IEcoList1.h in Headers */,
+				4E4907582ED24BC800864CDD /* IdEcoList1.h in Headers */,
+				4E4907602ED24BDD00864CDD /* CEcoLab1ConnectionPoint.h in Headers */,
+				4E4907612ED24BDD00864CDD /* CEcoLab1EnumConnectionPoints.h in Headers */,
+				4E4907622ED24BDD00864CDD /* CEcoLab1EnumConnections.h in Headers */,
+				4E4907592ED24BC800864CDD /* IEcoEnumConnections.h in Headers */,
+				4E49075A2ED24BC800864CDD /* IEcoConnectionPoint.h in Headers */,
+				4E49075B2ED24BC800864CDD /* IEcoEnumConnectionPoints.h in Headers */,
+				4E49075C2ED24BC800864CDD /* IEcoConnectionPointContainer.h in Headers */,
 				4E553C322EAE7CA300CA97D8 /* IEcoCalculatorX.h in Headers */,
 				4E553C332EAE7CA300CA97D8 /* IdEcoCalculatorB.h in Headers */,
 				4E553C342EAE7CA300CA97D8 /* IdEcoCalculatorE.h in Headers */,
@@ -188,6 +250,16 @@
 				4E553C262EAE7CA300CA97D8 /* IEcoCalculatorY.h in Headers */,
 				4E553C272EAE7CA300CA97D8 /* IdEcoCalculatorD.h in Headers */,
 				4E553C282EAE7CA300CA97D8 /* IdEcoCalculatorA.h in Headers */,
+				4E49074F2ED24BC800864CDD /* IEcoLab1Events.h in Headers */,
+				4E4907502ED24BC800864CDD /* IEcoList1.h in Headers */,
+				4E4907512ED24BC800864CDD /* IdEcoList1.h in Headers */,
+				4E4907632ED24BDD00864CDD /* CEcoLab1ConnectionPoint.h in Headers */,
+				4E4907642ED24BDD00864CDD /* CEcoLab1EnumConnectionPoints.h in Headers */,
+				4E4907652ED24BDD00864CDD /* CEcoLab1EnumConnections.h in Headers */,
+				4E4907522ED24BC800864CDD /* IEcoEnumConnections.h in Headers */,
+				4E4907532ED24BC800864CDD /* IEcoConnectionPoint.h in Headers */,
+				4E4907542ED24BC800864CDD /* IEcoEnumConnectionPoints.h in Headers */,
+				4E4907552ED24BC800864CDD /* IEcoConnectionPointContainer.h in Headers */,
 				4E553C292EAE7CA300CA97D8 /* IEcoCalculatorX.h in Headers */,
 				4E553C2A2EAE7CA300CA97D8 /* IdEcoCalculatorB.h in Headers */,
 				4E553C2B2EAE7CA300CA97D8 /* IdEcoCalculatorE.h in Headers */,
@@ -277,6 +349,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E8712BD2EB30D7A00268B12 /* CEcoLab1Factory.c in Sources */,
+				4E4907452ED24BB000864CDD /* CEcoLab1ConnectionPoint.c in Sources */,
+				4E4907462ED24BB000864CDD /* CEcoLab1EnumConnections.c in Sources */,
+				4E4907472ED24BB000864CDD /* CEcoLab1EnumConnectionPoints.c in Sources */,
 				4E8712BE2EB30D7A00268B12 /* CEcoLab1.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +361,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E8712BF2EB30D7A00268B12 /* CEcoLab1Factory.c in Sources */,
+				4E4907422ED24BB000864CDD /* CEcoLab1ConnectionPoint.c in Sources */,
+				4E4907432ED24BB000864CDD /* CEcoLab1EnumConnections.c in Sources */,
+				4E4907442ED24BB000864CDD /* CEcoLab1EnumConnectionPoints.c in Sources */,
 				4E8712C02EB30D7A00268B12 /* CEcoLab1.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

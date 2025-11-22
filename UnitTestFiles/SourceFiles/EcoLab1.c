@@ -36,6 +36,11 @@
 #include "IdEcoCalculatorE.h"
 
 
+#include "IEcoConnectionPointContainer.h"
+#include "IEcoConnectionPoint.h"
+#include "IEcoLab1Events.h"
+#include "CEcoLab1Sink.h"
+
 
 static void print_separator(const char* title) {
     printf("\n-------------------\n%s\n-------------------\n", title);
@@ -928,6 +933,97 @@ static int test_lab2(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem) {
     return 0;
 }
 
+int16_t AdviseConnectionPoint(IEcoLab1* pIEcoLab1, IEcoLab1Events* pSink, uint32_t* pcCookie) {
+    IEcoConnectionPointContainer* pCPC = 0;
+    IEcoConnectionPoint* pCP = 0;
+    int16_t result = 0;
+
+    // 1. Запрашиваем контейнер точек подключения
+    result = pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoConnectionPointContainer, (void**)&pCPC);
+    if (result == 0 && pCPC != 0) {
+        // 2. Находим точку подключения для нашего интерфейса событий
+        result = pCPC->pVTbl->FindConnectionPoint(pCPC, &IID_IEcoLab1Events, &pCP);
+        if (result == 0 && pCP != 0) {
+            // 3. Подписываемся (Advise)
+            result = pCP->pVTbl->Advise(pCP, (IEcoUnknown*)pSink, pcCookie);
+            pCP->pVTbl->Release(pCP);
+        }
+        pCPC->pVTbl->Release(pCPC);
+    }
+    return result;
+}
+
+/*
+ * Функция для отключения (Unadvise)
+ */
+int16_t UnadviseConnectionPoint(IEcoLab1* pIEcoLab1, uint32_t cCookie) {
+    IEcoConnectionPointContainer* pCPC = 0;
+    IEcoConnectionPoint* pCP = 0;
+    int16_t result = 0;
+
+    result = pIEcoLab1->pVTbl->QueryInterface(pIEcoLab1, &IID_IEcoConnectionPointContainer, (void**)&pCPC);
+    if (result == 0 && pCPC != 0) {
+        result = pCPC->pVTbl->FindConnectionPoint(pCPC, &IID_IEcoLab1Events, &pCP);
+        if (result == 0 && pCP != 0) {
+            result = pCP->pVTbl->Unadvise(pCP, cCookie);
+            pCP->pVTbl->Release(pCP);
+        }
+        pCPC->pVTbl->Release(pCPC);
+    }
+    return result;
+}
+
+/*
+ * ТЕСТ СОБЫТИЙ (Many-to-Many / One-to-Many)
+ */
+void test_connection_points_events(IEcoLab1* pIEcoLab1, IEcoMemoryAllocator1* pIMem) {
+    IEcoLab1Events* pSink1 = 0;
+    IEcoLab1Events* pSink2 = 0;
+    uint32_t cookie1 = 0;
+    uint32_t cookie2 = 0;
+    int* arr;
+    size_t nmemb = 5;
+    size_t elsize = sizeof(int);
+
+    printf("\n=== Starting Connection Point Event Test ===\n");
+
+    // 1. Создаем ДВА разных приемника
+    createCEcoLab1Sink(pIMem, "Sink_1 (Observer)", &pSink1);
+    createCEcoLab1Sink(pIMem, "Sink_2 (Logger)", &pSink2);
+
+    // 2. Подключаем ОБА приемника к ОДНОМУ компоненту
+    if (pSink1) {
+        if (AdviseConnectionPoint(pIEcoLab1, pSink1, &cookie1) == 0) {
+            printf("Sink 1 connected successfully.\n");
+        }
+    }
+    if (pSink2) {
+        if (AdviseConnectionPoint(pIEcoLab1, pSink2, &cookie2) == 0) {
+            printf("Sink 2 connected successfully.\n");
+        }
+    }
+
+    // 3. Выполняем сортировку (должны пойти события в оба синка)
+    printf("\n--- Running GnomeSort with events ---\n");
+    arr = (int*)pIMem->pVTbl->Alloc(pIMem, nmemb * elsize);
+    arr[0] = 5; arr[1] = 4; arr[2] = 3; arr[3] = 2; arr[4] = 1; // Worst case
+
+    // Запускаем сортировку
+    // Тут компонент будет дергать Fire_OnSortStart, Fire_OnSortSwap...
+    pIEcoLab1->pVTbl->GnomeSort(pIEcoLab1, arr, nmemb, elsize, cmp_int_asc_eco);
+
+    printf("--- Sort finished ---\n\n");
+
+    // 4. Отключаем приемники
+    if (cookie1) UnadviseConnectionPoint(pIEcoLab1, cookie1);
+    if (cookie2) UnadviseConnectionPoint(pIEcoLab1, cookie2);
+
+    // 5. Освобождаем
+    if (pSink1) pSink1->pVTbl->Release(pSink1);
+    if (pSink2) pSink2->pVTbl->Release(pSink2);
+    if (arr) pIMem->pVTbl->Free(pIMem, arr);
+}
+
 /*
  *
  * <сводка>
@@ -1002,6 +1098,9 @@ int16_t EcoMain(IEcoUnknown* pIUnk) {
     
     printf("=== Lab2 ===\n");
     test_lab2(pIEcoLab1, pIMem);
+    
+    printf("=== Lab3 ===\n");
+    test_connection_points_events(pIEcoLab1, pIMem);
 
 Release:
 

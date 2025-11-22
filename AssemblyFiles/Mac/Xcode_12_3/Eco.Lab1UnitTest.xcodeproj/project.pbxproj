@@ -13,6 +13,7 @@
 		4E250C872E93B0EF00F6E4CE /* lib00000000000000000000000046534D31.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E25069E2E933C7200F6E4CE /* lib00000000000000000000000046534D31.a */; };
 		4E250C882E93B14A00F6E4CE /* lib00000000000000000000000042757331.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2507172E933C7200F6E4CE /* lib00000000000000000000000042757331.a */; };
 		4E250C892E93B18600F6E4CE /* lib0000000000000000000000004D656D31.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2507C32E933C7200F6E4CE /* lib0000000000000000000000004D656D31.a */; };
+		4E4907672ED24C2D00864CDD /* CEcoLab1Sink.c in Sources */ = {isa = PBXBuildFile; fileRef = 4E4907662ED24C2D00864CDD /* CEcoLab1Sink.c */; };
 		4E87134F2EB4109E00268B12 /* 4828F6552E4540E78121EBD220DC360E.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E87134D2EB4109E00268B12 /* 4828F6552E4540E78121EBD220DC360E.so */; };
 		4E8713502EB4109E00268B12 /* AE202E543CE54550899603BD70C62565.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E87134E2EB4109E00268B12 /* AE202E543CE54550899603BD70C62565.so */; };
 		4E8713522EB4122300268B12 /* 3A8E44677E82475CB4A3719ED8397E61.so in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E8713512EB4122300268B12 /* 3A8E44677E82475CB4A3719ED8397E61.so */; };
@@ -2139,6 +2140,8 @@
 		4E250C172E933C7200F6E4CE /* EcoLab1.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = EcoLab1.c; sourceTree = "<group>"; };
 		4E250C1A2E933C7200F6E4CE /* MyECO.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = MyECO.xcodeproj; sourceTree = "<group>"; };
 		4E250C1C2E933C7200F6E4CE /* Eco.Lab1UnitTest_NO_LIBS.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Eco.Lab1UnitTest_NO_LIBS.xcodeproj; sourceTree = "<group>"; };
+		4E4907662ED24C2D00864CDD /* CEcoLab1Sink.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = CEcoLab1Sink.c; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/UnitTestFiles/SourceFiles/CEcoLab1Sink.c"; sourceTree = "<absolute>"; };
+		4E4907772ED24C6900864CDD /* CEcoLab1Sink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CEcoLab1Sink.h; path = "/Users/niazgazizullin/Eco/Eco.Education-main/Eco.Practice/Eco.Lab1/UnitTestFiles/HeaderFiles/CEcoLab1Sink.h"; sourceTree = "<absolute>"; };
 		4E8713372EB4106C00268B12 /* 4828F6552E4540E78121EBD220DC360E.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = 4828F6552E4540E78121EBD220DC360E.so; path = ../../../BuildFiles/4828F6552E4540E78121EBD220DC360E.so; sourceTree = "<group>"; };
 		4E87134A2EB4106C00268B12 /* AE202E543CE54550899603BD70C62565.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = AE202E543CE54550899603BD70C62565.so; path = ../../../BuildFiles/AE202E543CE54550899603BD70C62565.so; sourceTree = "<group>"; };
 		4E87134D2EB4109E00268B12 /* 4828F6552E4540E78121EBD220DC360E.so */ = {isa = PBXFileReference; lastKnownFileType = file; name = 4828F6552E4540E78121EBD220DC360E.so; path = ../../../BuildFiles/Mac/arm64/Debug/4828F6552E4540E78121EBD220DC360E.so; sourceTree = "<group>"; };
@@ -2209,6 +2212,7 @@
 		01C7120927F20F7F00AE9906 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
+				4E4907662ED24C2D00864CDD /* CEcoLab1Sink.c */,
 				01C7120D27F20FD800AE9906 /* EcoLab1.c */,
 			);
 			name = "Source Files";
@@ -2224,6 +2228,7 @@
 		01C7120B27F20F9400AE9906 /* Header Files */ = {
 			isa = PBXGroup;
 			children = (
+				4E4907772ED24C6900864CDD /* CEcoLab1Sink.h */,
 			);
 			name = "Header Files";
 			sourceTree = "<group>";
@@ -10142,6 +10147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E4907672ED24C2D00864CDD /* CEcoLab1Sink.c in Sources */,
 				01C7120F27F20FD800AE9906 /* EcoLab1.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
