@@ -30,6 +30,12 @@
 #include "DefEcoIPCCMailbox1BCM283x.h"
 #endif
 
+typedef struct MemoryHeader {
+    struct MemoryHeader* pNext; /* Указатель на следующий блок */
+    uint32_t size;              /* Размер данных в блоке */
+    bool_t bFree;               /* Флаг: свободен ли блок */
+} MemoryHeader;
+
 typedef struct CEcoMemoryManager1Lab_623E1838 {
 
     /* Таблица функций интерфейса IEcoMemoryManager1 */
@@ -71,12 +77,6 @@ typedef struct CEcoMemoryManager1Lab_623E1838 {
     uint8_t m_mutex;
 
 } CEcoMemoryManager1Lab_623E1838, *CEcoMemoryManager1Lab_623E1838Ptr;
-
-typedef struct MemoryHeader {
-    struct MemoryHeader* pNext; /* Указатель на следующий блок */
-    uint32_t size;              /* Размер данных в блоке */
-    bool_t bFree;               /* Флаг: свободен ли блок */
-} MemoryHeader;
 
 /* Инициализация экземпляра */
 int16_t ECOCALLMETHOD initCEcoMemoryManager1Lab_623E1838(/*in*/ IEcoMemoryManager1Ptr_t me, /* in */ IEcoUnknown *pIUnkSystem);

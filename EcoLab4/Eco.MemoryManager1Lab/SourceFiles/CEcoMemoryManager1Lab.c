@@ -162,8 +162,6 @@ static int16_t ECOCALLMETHOD CEcoMemoryManager1Lab_623E1838_Init(/* in */ IEcoMe
     pFirstHeader->pNext = 0;
     pFirstHeader->bFree = 1;
     pFirstHeader->size = size - sizeof(MemoryHeader);
-    
-    pCMe->pFreeListHead = pFirstHeader;
 
     return 0;
 }

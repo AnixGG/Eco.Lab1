@@ -182,7 +182,7 @@ void* ECOCALLMETHOD CEcoMemoryAllocator1Lab_623E1838_Alloc(/* in */ IEcoMemoryAl
         pBestFit->pNext = pNewBlock;
     }
     
-    /
+    
     pBestFit->bFree = 0;
     pCMe->m_iAllocSize += pBestFit->size;
     
@@ -241,9 +241,26 @@ void ECOCALLMETHOD CEcoMemoryAllocator1Lab_623E1838_Free(/* in */ IEcoMemoryAllo
     //pCMe->m_pIMem->pVTbl->Free(pCMe->m_pIMem, pv);
 }
 
+void* ECOCALLMETHOD CEcoMemoryAllocator1Lab_623E1838_Copy(/* in */ IEcoMemoryAllocator1Ptr_t me, /* in */ voidptr_t pvDst, /* in */ voidptr_t pvSrc, /* in */ uint32_t size) {
+    /*CEcoMemoryManager1Lab_623E1838* pCMe = (CEcoMemoryManager1Lab_623E1838*)((uint64_t)me - sizeof(voidptr_t));*/
+    char_t* dst = (char_t*)pvDst;
+    char_t* src = (char_t*)pvSrc;
+    uint32_t i;
+
+    if (pvDst == 0 || pvSrc == 0) {
+        return 0;
+    }
+
+    /* Простое побайтовое копирование */
+    for (i = 0; i < size; i++) {
+        dst[i] = src[i];
+    }
+
+    return pvDst;
+}
 
 void* ECOCALLMETHOD CEcoMemoryAllocator1Lab_623E1838_Realloc(/* in */ IEcoMemoryAllocator1Ptr_t me, /* in */ voidptr_t pv, /* in */ uint32_t size) {
-    CEcoMemoryManager1Lab_623E1838* pCMe = (CEcoMemoryManager1Lab_623E1838*)((uint64_t)me - sizeof(voidptr_t));
+    /*CEcoMemoryManager1Lab_623E1838* pCMe = (CEcoMemoryManager1Lab_623E1838*)((uint64_t)me - sizeof(voidptr_t));*/
     void* newPtr = 0;
     MemoryHeader* pOldHeader = 0;
     uint32_t copySize = 0;
@@ -277,25 +294,6 @@ void* ECOCALLMETHOD CEcoMemoryAllocator1Lab_623E1838_Realloc(/* in */ IEcoMemory
 
     return newPtr;
 }
-
-void* ECOCALLMETHOD CEcoMemoryAllocator1Lab_623E1838_Copy(/* in */ IEcoMemoryAllocator1Ptr_t me, /* in */ voidptr_t pvDst, /* in */ voidptr_t pvSrc, /* in */ uint32_t size) {
-    /*CEcoMemoryManager1Lab_623E1838* pCMe = (CEcoMemoryManager1Lab_623E1838*)((uint64_t)me - sizeof(voidptr_t));*/
-    char_t* dst = (char_t*)pvDst;
-    char_t* src = (char_t*)pvSrc;
-    uint32_t i;
-
-    if (pvDst == 0 || pvSrc == 0) {
-        return 0;
-    }
-
-    /* Простое побайтовое копирование */
-    for (i = 0; i < size; i++) {
-        dst[i] = src[i];
-    }
-
-    return pvDst;
-}
-
 
 void* ECOCALLMETHOD CEcoMemoryAllocator1Lab_623E1838_Fill(/* in */ IEcoMemoryAllocator1Ptr_t me, /* in */ voidptr_t pvDst, /* in */ char_t Fill, /* in */ uint32_t size) {
     /*CEcoMemoryManager1Lab_623E1838* pCMe = (CEcoMemoryManager1Lab_623E1838*)((uint64_t)me - sizeof(voidptr_t));*/

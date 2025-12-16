@@ -77,6 +77,14 @@ int16_t EcoMain(IEcoUnknown* pIUnk) {
     char_t* ptrMerged = 0;
     char_t* ptrPart1Saved = 0;
 
+    /* Переменные для Stress test*/
+    char_t* ptrs[20] = {0};
+    int16_t i = 0;
+    int16_t passed = 1;
+    char_t* pBig = 0;
+    char_t* pMid1 = 0;
+    char_t* pMid2 = 0;
+    
     /* Создание экземпляра интерфейсной шины */
     result = GetIEcoComponentFactoryPtr_00000000000000000000000042757331->pVTbl->Alloc(GetIEcoComponentFactoryPtr_00000000000000000000000042757331, 0, 0, &IID_IEcoInterfaceBus1, (void**)&pIBus);
     if (result != 0 && pIBus == 0) {
@@ -190,6 +198,113 @@ int16_t EcoMain(IEcoUnknown* pIUnk) {
     
     if(ptrBarrier1) pIMem->pVTbl->Free(pIMem, ptrBarrier1);
     
+    pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 8, CHARACTER_ATTRIBUTE_FORE_COLOR_WHITTE, "=== TEST 3: Swiss Cheese ===", 26);
+    
+    passed = 1;
+    /*Выделяем массив мелких блоков (20 штук по 64 байта) */
+    for (i = 0; i < 20; i++) {
+        ptrs[i] = (char_t*)pIMem->pVTbl->Alloc(pIMem, 64);
+        if (ptrs[i] == 0) {
+            passed = 0;
+        } else {
+            
+            pIMem->pVTbl->Fill(pIMem, ptrs[i], (char_t)i, 64);
+        }
+    }
+
+    if (passed) {
+        pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 9, CHARACTER_ATTRIBUTE_FORE_COLOR_GREEN, "Alloc 20x64: OK", 15);
+    } else {
+        pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 9, CHARACTER_ATTRIBUTE_FORE_COLOR_RED, "Alloc 20x64: FAIL", 17);
+    }
+    
+    for (i = 0; i < 20; i += 2) {
+            if (ptrs[i]) {
+                pIMem->pVTbl->Free(pIMem, ptrs[i]);
+                ptrs[i] = 0;
+        }
+    }
+    
+    pBig = (char_t*)pIMem->pVTbl->Alloc(pIMem, 128);
+        
+    if (pBig) {
+        pIMem->pVTbl->Free(pIMem, pBig);
+        pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 10, CHARACTER_ATTRIBUTE_FORE_COLOR_GREEN, "Alloc > Hole size: OK", 21);
+    } else {
+        pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 10, CHARACTER_ATTRIBUTE_FORE_COLOR_RED, "Alloc > Hole size: FAIL", 23);
+    }
+    
+    /* Освобождаем оставшиеся блоки */
+    passed = 1;
+
+    for (i = 1; i < 20; i += 2) {
+        if (ptrs[i]) {
+            if (*ptrs[i] != (char_t)i) {
+                passed = 0;
+            }
+            pIMem->pVTbl->Free(pIMem, ptrs[i]);
+            ptrs[i] = 0;
+        }
+    }
+
+    if (passed) {
+        pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 11, CHARACTER_ATTRIBUTE_FORE_COLOR_GREEN, "Data Check & Free: OK", 21);
+    } else {
+        pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 11, CHARACTER_ATTRIBUTE_FORE_COLOR_RED, "Data Check & Free: FAIL", 23);
+    }
+    pBig = (char_t*)pIMem->pVTbl->Alloc(pIMem, 10240);
+    
+    /* Полная дефрагментация */
+    if (pBig) {
+        pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 12, CHARACTER_ATTRIBUTE_FORE_COLOR_GREEN, "Full Coalescing: OK", 19);
+        pIMem->pVTbl->Free(pIMem, pBig);
+    } else {
+        pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 12, CHARACTER_ATTRIBUTE_FORE_COLOR_RED, "Full Coalescing: FAIL", 21);
+    }
+    
+    pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 14, CHARACTER_ATTRIBUTE_FORE_COLOR_WHITTE, "=== TEST 4: Realloc ===", 23);
+
+    pMid1 = (char_t*)pIMem->pVTbl->Alloc(pIMem, 32);
+    if (pMid1) {
+        /* Заполняем 'X' */
+        pIMem->pVTbl->Fill(pIMem, pMid1, 'X', 32);
+
+        /* Expand (Расширение до 128 байт) */
+        /* Должен выделиться новый блок, данные скопироваться, старый удалиться */
+        pBig = (char_t*)pIMem->pVTbl->Realloc(pIMem, pMid1, 128);
+        
+        if (pBig) {
+            /* Проверяем, сохранились ли данные */
+            if (*pBig == 'X') {
+                pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 15, CHARACTER_ATTRIBUTE_FORE_COLOR_GREEN, "Expand & Copy: OK", 17);
+            } else {
+                pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 15, CHARACTER_ATTRIBUTE_FORE_COLOR_RED, "Expand: BAD DATA", 16);
+            }
+       
+
+            /* Shrink (Сужение до 16 байт) */
+            pMid2 = (char_t*)pIMem->pVTbl->Realloc(pIMem, pBig, 16);
+            
+            if (pMid2) {
+                if (*pMid2 == 'X') {
+                    pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 16, CHARACTER_ATTRIBUTE_FORE_COLOR_GREEN, "Shrink: OK", 10);
+                } else {
+                    pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 16, CHARACTER_ATTRIBUTE_FORE_COLOR_RED, "Shrink: BAD DATA", 16);
+                }
+                pIMem->pVTbl->Free(pIMem, pMid2);
+            } else {
+                pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 16, CHARACTER_ATTRIBUTE_FORE_COLOR_RED, "Shrink: FAIL", 12);
+                pIMem->pVTbl->Free(pIMem, pBig); /* Чистим старый, если shrink не удался */
+            }
+        } else {
+            pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 16, CHARACTER_ATTRIBUTE_FORE_COLOR_RED, "Expand: FAIL", 12);
+            pIMem->pVTbl->Free(pIMem, pMid1);
+        }
+    }
+ 
+
+    pIVideo->pVTbl->WriteString(pIVideo, 0, 0, 0, 18, CHARACTER_ATTRIBUTE_FORE_COLOR_CYAN, "ALL TESTS COMPLETED.", 20);
+
     
 
 TestEnd:
